@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>海角强上大白二姐 - 网络梗源流与二创内容索引</title>
+<meta name="description" content="海角强上大白二姐是一个从短视频段子演变而来的网络梗，这里汇集梗的原始出处、台词版本对照、二创视频清单、表情包素材与传播时间线，适合想弄懂梗从哪来、各版本差在哪的观众查阅。">
+<meta name="keywords" content="海角强上大白二姐">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23152a3a'/%3E%3Cpath d='M12 44c8-22 14-22 20 0s10 2 20-14' stroke='%23f2b544' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='20' r='6' fill='%23e2604f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#152a3a;
+  --brand-mid:#25455c;
+  --brand-soft:#e8eef3;
+  --accent:#e2604f;
+  --accent-soft:#fdece9;
+  --gold:#f2b544;
+  --bg:#f6f5f2;
+  --panel:#ffffff;
+  --text:#1c2429;
+  --text-2:#4d5a63;
+  --text-3:#7d8a93;
+  --line:#e2e0da;
+  --r-card:14px;
+  --r-btn:9px;
+  --r-tag:5px;
+  --r-banner:20px;
+  --sh:0 1px 2px rgba(21,42,58,.06),0 6px 18px rgba(21,42,58,.06);
+  --sh-hover:0 4px 10px rgba(21,42,58,.10),0 14px 30px rgba(21,42,58,.12);
+  --sticky-h:104px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-h)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 1em}
+ul,ol{margin:0 0 1em;padding-left:1.3em}
+li{margin-bottom:.35em}
+button{font-family:inherit}
+
+/* ===== 吸顶公告条 + 页头 ===== */
+.sticky-top{position:sticky;top:0;z-index:90}
+.notice{background:var(--brand);color:#dbe6ee;font-size:13px;line-height:1.5}
+.notice-inner{max-width:1360px;margin:0 auto;padding:7px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.notice-brand{font-weight:700;color:var(--gold);letter-spacing:.5px;white-space:nowrap}
+.notice-list{display:flex;gap:18px;flex-wrap:wrap;margin:0;padding:0;list-style:none}
+.notice-list li{display:flex;gap:7px;align-items:baseline;margin:0}
+.notice-date{color:var(--gold);font-variant-numeric:tabular-nums;font-size:12px}
+.notice-tag{background:rgba(242,181,68,.16);color:var(--gold);border-radius:3px;padding:0 5px;font-size:11px}
+
+.site-header{background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(21,42,58,.03)}
+.header-inner{max-width:1360px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:22px}
+.logo{display:flex;align-items:center;gap:10px;flex:none}
+.logo svg{width:36px;height:36px;flex:none}
+.logo-text{font-size:19px;font-weight:800;letter-spacing:.3px;color:var(--brand);white-space:nowrap}
+.main-nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+.main-nav a{padding:6px 11px;border-radius:var(--r-btn);font-size:14.5px;color:var(--text-2);transition:background .18s,color .18s}
+.main-nav a:hover,.main-nav a:focus-visible{background:var(--brand-soft);color:var(--brand)}
+.header-tools{display:flex;align-items:center;gap:10px;flex:none}
+.search-box{position:relative}
+.search-box input{width:190px;padding:7px 10px 7px 30px;border:1px solid var(--line);border-radius:var(--r-btn);background:#fbfaf8;font-size:13.5px;color:var(--text)}
+.search-box input:focus{outline:2px solid var(--brand-mid);outline-offset:1px;background:#fff}
+.search-box svg{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--text-3);fill:none;stroke-width:2}
+.btn-ghost{border:1px solid var(--line);background:#fff;color:var(--brand);padding:7px 13px;border-radius:var(--r-btn);font-size:13.5px;cursor:pointer;transition:background .18s,border-color .18s}
+.btn-ghost:hover{background:var(--brand-soft);border-color:var(--brand-mid)}
+.btn-solid{background:var(--accent);color:#fff;border:none;padding:8px 15px;border-radius:var(--r-btn);font-size:13.5px;cursor:pointer;transition:background .18s}
+.btn-solid:hover{background:#c94c3c}
+.hamburger{display:none;background:#fff;border:1px solid var(--line);border-radius:var(--r-btn);width:38px;height:34px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.hamburger span{display:block;width:17px;height:2px;background:var(--brand);border-radius:2px}
+.search-empty{font-size:13px;color:var(--accent);padding:6px 0;display:none}
+
+/* ===== 首屏 ===== */
+.hero{position:relative;overflow:hidden;background:linear-gradient(140deg,#152a3a 0%,#22435a 52%,#2d5a73 100%);color:#eef4f8}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 82% 18%,rgba(242,181,68,.24),transparent 42%),
+  radial-gradient(circle at 12% 82%,rgba(226,96,79,.20),transparent 46%);pointer-events:none}
+.hero-inner{position:relative;max-width:1360px;margin:0 auto;padding:46px 24px 50px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:38px;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.5px;color:var(--gold);border:1px solid rgba(242,181,68,.4);padding:4px 11px;border-radius:99px;margin-bottom:16px}
+.hero h1{font-size:clamp(30px,4.4vw,50px);letter-spacing:1px;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.22)}
+.hero-desc{margin-top:16px;font-size:15.5px;line-height:1.85;color:#c9d8e2;max-width:38em}
+.hero-actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.hero-actions a{padding:9px 20px;border-radius:var(--r-btn);font-size:14.5px;font-weight:600;transition:transform .18s,background .18s}
+.hero-actions a:hover{transform:translateY(-2px)}
+.ha-primary{background:var(--gold);color:#152a3a}
+.ha-second{border:1px solid rgba(255,255,255,.35);color:#eef4f8}
+.ha-second:hover{background:rgba(255,255,255,.1)}
+.hero-stats{display:flex;gap:26px;margin-top:28px;flex-wrap:wrap}
+.hero-stats div{font-size:12px;color:#9fb4c2}
+.hero-stats b{display:block;font-size:20px;color:#fff;font-variant-numeric:tabular-nums;line-height:1.3}
+.hero-art{position:relative;display:flex;justify-content:center;align-items:center;min-height:260px}
+.hero-art svg{width:100%;max-width:400px;height:auto;animation:float 7s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* ===== 主体布局：三栏门户 ===== */
+.layout{max-width:1360px;margin:0 auto;padding:34px 24px 10px;display:grid;grid-template-columns:180px minmax(0,1fr) 250px;gap:26px;align-items:start}
+.col-left{position:sticky;top:calc(var(--sticky-h) + 18px)}
+.channel-nav{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:14px 10px;box-shadow:var(--sh)}
+.channel-nav h2{font-size:12px;letter-spacing:1.4px;color:var(--text-3);padding:0 8px 9px;font-weight:600}
+.channel-nav ul{list-style:none;margin:0;padding:0}
+.channel-nav li{margin:0}
+.channel-nav a{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:7px 9px;border-radius:7px;font-size:14px;color:var(--text-2);transition:background .16s,color .16s}
+.channel-nav a:hover,.channel-nav a.active{background:var(--brand-soft);color:var(--brand);font-weight:600}
+.channel-nav a em{font-style:normal;font-size:11.5px;color:var(--text-3);font-variant-numeric:tabular-nums}
+
+.col-right{position:sticky;top:calc(var(--sticky-h) + 18px);display:flex;flex-direction:column;gap:22px}
+.side-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:15px 15px 12px;box-shadow:var(--sh)}
+.side-card h2{font-size:14px;color:var(--brand);margin-bottom:11px;padding-bottom:9px;border-bottom:1px dashed var(--line);display:flex;align-items:center;gap:7px}
+.side-card h2::before{content:"";width:3px;height:14px;background:var(--accent);border-radius:2px}
+.hot-list{list-style:none;margin:0;padding:0;counter-reset:h}
+.hot-list li{counter-increment:h;display:flex;gap:9px;padding:6px 0;font-size:13.5px;line-height:1.5;color:var(--text-2);border-bottom:1px solid #f0efeb}
+.hot-list li:last-child{border-bottom:none}
+.hot-list li::before{content:counter(h);flex:none;width:17px;height:17px;border-radius:4px;background:var(--brand-soft);color:var(--brand-mid);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.hot-list li:nth-child(-n+3)::before{background:var(--accent);color:#fff}
+.hot-list a:hover{color:var(--accent)}
+.update-list{list-style:none;margin:0;padding:0;font-size:13px}
+.update-list li{padding:6px 0;border-bottom:1px solid #f0efeb;display:flex;gap:8px;align-items:baseline;color:var(--text-2);line-height:1.5}
+.update-list li:last-child{border-bottom:none}
+.update-list time{flex:none;color:var(--text-3);font-size:11.5px;font-variant-numeric:tabular-nums}
+
+main{min-width:0;display:flex;flex-direction:column;gap:34px}
+section.block{scroll-margin-top:var(--sticky-h)}
+.block-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:15px;flex-wrap:wrap}
+.block-head h2{font-size:21px;color:var(--brand);letter-spacing:.3px}
+.block-head h2 small{font-size:13px;font-weight:500;color:var(--text-3);margin-left:9px;letter-spacing:0}
+.block-head .more{font-size:13px;color:var(--text-3)}
+.block-head .more:hover{color:var(--accent)}
+
+/* 概览 */
+.overview{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:22px 24px;box-shadow:var(--sh)}
+.overview p{color:var(--text-2);font-size:15px;line-height:1.9}
+.overview p:last-child{margin-bottom:0}
+.ov-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.ov-tags span{font-size:12.5px;background:var(--brand-soft);color:var(--brand-mid);border-radius:var(--r-tag);padding:3px 9px}
+
+/* 卡片网格 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh-hover)}
+.card-thumb{position:relative;aspect-ratio:4/3;background:var(--brand-soft)}
+.card-thumb img{width:100%;height:100%;object-fit:cover}
+.card-thumb .badge{position:absolute;left:8px;top:8px;background:rgba(21,42,58,.82);color:#fff;font-size:11px;padding:2px 7px;border-radius:4px;backdrop-filter:blur(3px)}
+.card-body{padding:12px 13px 14px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card-body h3{font-size:15.5px;color:var(--brand);line-height:1.45}
+.card-body h3 a:hover{color:var(--accent)}
+.card-meta{font-size:11.5px;color:var(--text-3);display:flex;gap:10px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.card-meta b{color:var(--accent);font-weight:600}
+.card-desc{font-size:13px;color:var(--text-2);line-height:1.65;flex:1}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:11.5px;background:#f1f0ec;color:var(--text-2);border-radius:var(--r-tag);padding:2px 7px}
+.tag.hot{background:var(--accent-soft);color:#b8462f}
+
+/* 更新流 */
+.feed{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh)}
+.feed li{list-style:none;display:grid;grid-template-columns:78px minmax(0,1fr);gap:14px;padding:12px 18px;border-bottom:1px solid #f0efeb;font-size:14px}
+.feed li:last-child{border-bottom:none}
+.feed li:hover{background:#fbfaf8}
+.feed time{font-size:12px;color:var(--text-3);font-variant-numeric:tabular-nums;padding-top:2px}
+.feed b{color:var(--brand)}
+.feed span{color:var(--text-2);font-size:13.5px;display:block;margin-top:2px;line-height:1.6}
+.feed ul{margin:0;padding:0}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.cat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:14px 15px;transition:border-color .18s,background .18s,transform .18s;display:block}
+.cat:hover{border-color:var(--brand-mid);background:#fdfcf9;transform:translateY(-2px)}
+.cat b{display:block;font-size:15px;color:var(--brand);margin-bottom:4px}
+.cat span{font-size:12.5px;color:var(--text-3);line-height:1.55;display:block}
+.cat em{font-style:normal;font-size:11.5px;color:var(--accent);display:block;margin-top:6px;font-variant-numeric:tabular-nums}
+
+/* 深度解析 */
+.deep{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:26px 28px;box-shadow:var(--sh)}
+.deep h3{font-size:17.5px;color:var(--brand);margin:26px 0 10px;padding-left:11px;border-left:4px solid var(--gold)}
+.deep h3:first-of-type{margin-top:6px}
+.deep p{font-size:15px;line-height:1.9;color:var(--text-2)}
+.deep .quote{font-size:14px;color:var(--text-2);background:#fbfaf7;border-left:3px solid var(--line);padding:10px 14px;border-radius:0 8px 8px 0;margin:14px 0}
+.deep strong{color:var(--brand)}
+.deep ul{font-size:14.5px;color:var(--text-2);line-height:1.85}
+.check-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0 6px}
+.check-table th,.check-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;color:var(--text-2)}
+.check-table th{background:var(--brand-soft);color:var(--brand);font-weight:600;font-size:13px}
+.check-table td b{color:var(--brand)}
+
+/* 指南步骤 */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;counter-reset:s}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:16px 17px 16px 52px;position:relative;box-shadow:var(--sh)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:15px;top:15px;width:25px;height:25px;border-radius:7px;background:var(--brand);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.step b{display:block;font-size:15px;color:var(--brand);margin-bottom:6px}
+.step p{font-size:13.5px;color:var(--text-2);margin:0;line-height:1.7}
+
+/* FAQ */
+.faq{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:8px 22px;box-shadow:var(--sh)}
+.faq details{border-bottom:1px solid #f0efeb}
+.faq details:last-child{border-bottom:none}
+.faq summary{cursor:pointer;padding:14px 26px 14px 2px;font-size:15px;font-weight:600;color:var(--brand);position:relative;list-style:none;line-height:1.6}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:19px;color:var(--text-3);font-weight:400;transition:transform .2s}
+.faq details[open] summary::after{content:"−"}
+.faq summary:hover{color:var(--accent)}
+.faq .ans{padding:0 4px 15px;font-size:14px;line-height:1.85;color:var(--text-2)}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:13px}
+.cmt{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:13px 15px;box-shadow:var(--sh)}
+.cmt-head{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.avatar{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;color:#fff;flex:none}
+.cmt-head b{font-size:13px;color:var(--brand)}
+.cmt-head time{font-size:11px;color:var(--text-3);margin-left:auto;font-variant-numeric:tabular-nums}
+.cmt p{font-size:13.5px;color:var(--text-2);margin:0;line-height:1.72}
+
+/* 资讯 */
+.news{display:flex;flex-direction:column;gap:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--sh);overflow:hidden}
+.news-item{padding:15px 20px;border-bottom:1px solid #f0efeb;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:start}
+.news-item:last-child{border-bottom:none}
+.news-item:hover{background:#fbfaf8}
+.news-item h3{font-size:15.5px;color:var(--brand);margin-bottom:5px}
+.news-item h3 a:hover{color:var(--accent)}
+.news-item p{font-size:13.5px;color:var(--text-2);margin:0;line-height:1.7}
+.news-item time{font-size:12px;color:var(--text-3);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* 相关推荐 */
+.rec-row{display:flex;flex-wrap:wrap;gap:9px}
+.rec-row a{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:6px 15px;font-size:13.5px;color:var(--text-2);transition:all .18s}
+.rec-row a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+
+/* 榜单时间线 */
+.timeline{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:20px 24px 20px 30px;box-shadow:var(--sh);position:relative}
+.timeline::before{content:"";position:absolute;left:38px;top:26px;bottom:26px;width:2px;background:var(--line)}
+.tl-item{position:relative;padding-left:26px;margin-bottom:17px}
+.tl-item:last-child{margin-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-4px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--panel);box-shadow:0 0 0 2px var(--line)}
+.tl-item b{font-size:14.5px;color:var(--brand);display:block}
+.tl-item time{font-size:11.5px;color:var(--accent);font-variant-numeric:tabular-nums;margin-right:8px}
+.tl-item span{font-size:13.5px;color:var(--text-2);line-height:1.7;display:block;margin-top:2px}
+
+/* 投稿互动 */
+.submit-band{background:linear-gradient(120deg,#25455c,#152a3a);border-radius:var(--r-banner);padding:24px 26px;color:#dce8f0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center}
+.submit-band h2{font-size:19px;color:#fff;margin-bottom:7px}
+.submit-band p{font-size:13.5px;color:#aec3d1;margin:0;line-height:1.7;max-width:46em}
+.submit-band .acts{display:flex;gap:10px;flex-wrap:wrap}
+.submit-band .acts a{padding:9px 18px;border-radius:var(--r-btn);font-size:14px;font-weight:600}
+.sb-a{background:var(--gold);color:#152a3a}
+.sb-b{border:1px solid rgba(255,255,255,.3);color:#eaf2f8}
+
+/* 页尾 */
+.site-footer{background:var(--brand);color:#a9bcc9;margin-top:40px;font-size:13.5px}
+.footer-inner{max-width:1360px;margin:0 auto;padding:36px 24px 24px;display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:30px}
+.footer-brand{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.footer-brand svg{width:30px;height:30px}
+.footer-brand b{font-size:17px;color:#fff;letter-spacing:.3px}
+.footer-inner p{font-size:13px;line-height:1.8;margin:0;color:#9db2c0}
+.footer-inner h3{font-size:13px;color:#e3edf3;margin-bottom:10px;letter-spacing:.5px}
+.footer-inner ul{list-style:none;margin:0;padding:0}
+.footer-inner li{margin-bottom:6px}
+.footer-inner a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);text-align:center;padding:14px 24px;font-size:12px;color:#7f95a4}
+.footer-bottom span{margin:0 7px}
+
+/* 回顶 */
+#toTop{position:fixed;right:22px;bottom:26px;width:42px;height:42px;border-radius:50%;background:var(--brand);color:#fff;border:none;cursor:pointer;box-shadow:var(--sh-hover);display:none;align-items:center;justify-content:center;z-index:80;transition:background .18s,transform .18s}
+#toTop:hover{background:var(--accent);transform:translateY(-2px)}
+#toTop svg{width:17px;height:17px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+#toTop.show{display:flex}
+
+/* 遮罩 */
+.mask{position:fixed;inset:0;background:rgba(21,42,58,.45);z-index:95;display:none}
+.mask.show{display:block}
+
+@media (max-width:1100px){
+  .layout{grid-template-columns:170px minmax(0,1fr);gap:22px}
+  .col-right{position:static;grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));flex-direction:row}
+}
+@media (max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:8px}
+  .hero-art{order:-1;min-height:170px}
+  .hero-art svg{max-width:250px}
+  .header-inner{gap:14px}
+  .main-nav{display:none}
+  .hamburger{display:flex}
+  .search-box input{width:150px}
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .col-left{position:fixed;left:0;top:var(--sticky-h);bottom:0;width:250px;background:#fff;z-index:96;transform:translateX(-105%);transition:transform .25s;overflow-y:auto;padding:14px;box-shadow:var(--sh-hover)}
+  .col-left.open{transform:translateX(0)}
+  .channel-nav{position:static;box-shadow:none;border:none}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .submit-band{grid-template-columns:1fr}
+}
+@media (max-width:740px){
+  :root{--sticky-h:96px}
+  .notice-inner{padding:6px 14px;gap:8px;font-size:12px}
+  .notice-list{gap:10px}
+  .notice-list li:nth-child(n+3){display:none}
+  .header-inner{padding:9px 14px;gap:10px}
+  .logo-text{font-size:16px}
+  .search-box{display:none}
+  .hero-inner{padding:30px 16px 34px}
+  .hero-desc{font-size:14.5px}
+  .layout{padding:22px 14px 6px;gap:24px}
+  main{gap:26px}
+  .deep,.overview{padding:18px 16px}
+  .card-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+  .feed li{grid-template-columns:1fr;gap:3px;padding:11px 14px}
+  .news-item{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr;padding:26px 16px 18px;gap:22px}
+  .faq{padding:6px 15px}
+  #toTop{right:14px;bottom:16px}
+  .hero-stats{gap:18px}
+  .hero-stats b{font-size:17px}
+  .submit-band{padding:20px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="notice">
+    <div class="notice-inner">
+      <span class="notice-brand">海角强上大白二姐</span>
+      <ul class="notice-list">
+        <li><span class="notice-date">11-08</span><span class="notice-tag">新增</span>《二姐反手三连》第7版台词对照表</li>
+        <li><span class="notice-date">11-07</span><span class="notice-tag">条目</span>“海角天台版”原始录屏补入时间线</li>
+        <li><span class="notice-date">11-05</span><span class="notice-tag">更新</span>表情包素材库新增12张衍生帧</li>
+      </ul>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="/#top" aria-label="返回首页顶部">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#152a3a"/>
+          <path d="M12 44c8-22 14-22 20 0s10 2 20-14" stroke="#f2b544" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <circle cx="50" cy="20" r="6" fill="#e2604f"/>
+        </svg>
+        <span class="logo-text">海角强上大白二姐</span>
+      </a>
+      <nav class="main-nav" aria-label="主题导航">
+        <a href="/#overview">梗源概览</a>
+        <a href="/#picks">精选条目</a>
+        <a href="/#updates">更新动态</a>
+        <a href="/#cats">分类索引</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">观看路径</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+      <div class="header-tools">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+          <input type="search" id="searchInput" placeholder="搜条目、台词、素材" aria-label="站内查找条目">
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="打开频道菜单" aria-expanded="false" aria-controls="channelCol">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="mask" id="mask"></div>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-eyebrow">网络梗 · 源流梳理 · 二创索引</span>
+      <h1>海角强上大白二姐</h1>
+      <p class="hero-desc">从一段 2021 年的天台对话段子，到近两年反复被剪的“反手三连”，这条梗的版本比多数人记得的复杂。这里收的是原始录屏、逐句台词对照、二创视频清单、表情包衍生帧和传播时间线，按“出处—变体—反应”三层摆开。</p>
+      <div class="hero-actions">
+        <a class="ha-primary" href="/#deep">读源流解析</a>
+        <a class="ha-second" href="/#picks">查精选条目</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>38</b>条已整理版本</div>
+        <div><b>12</b>组台词对照</div>
+        <div><b>11-08</b>最近一次补录</div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 400 300" role="img">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f2b544" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#e2604f" stop-opacity=".55"/>
+          </linearGradient>
+        </defs>
+        <rect x="24" y="48" width="352" height="204" rx="16" fill="#0f2230" stroke="#2d5a73" stroke-width="2"/>
+        <rect x="44" y="68" width="150" height="10" rx="5" fill="#2d5a73"/>
+        <rect x="44" y="90" width="240" height="8" rx="4" fill="#25455c"/>
+        <rect x="44" y="108" width="200" height="8" rx="4" fill="#25455c"/>
+        <rect x="44" y="140" width="160" height="72" rx="9" fill="url(#g1)" opacity=".9"/>
+        <rect x="218" y="140" width="138" height="32" rx="8" fill="#25455c"/>
+        <rect x="218" y="180" width="138" height="32" rx="8" fill="#25455c"/>
+        <path d="M300 60c14 0 24 10 24 22s-10 22-24 22" stroke="#f2b544" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="336" cy="82" r="9" fill="#e2604f"/>
+        <path d="M52 236h300" stroke="#2d5a73" stroke-width="2" stroke-dasharray="6 7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="layout">
+  <aside class="col-left" id="channelCol">
+    <nav class="channel-nav" aria-label="频道分类">
+      <h2>频道索引</h2>
+      <ul>
+        <li><a href="/#overview" class="active">梗源概览<em>01</em></a></li>
+        <li><a href="/#picks">精选条目<em>02</em></a></li>
+        <li><a href="/#updates">更新动态<em>03</em></a></li>
+        <li><a href="/#cats">分类索引<em>04</em></a></li>
+        <li><a href="/#deep">源流解析<em>05</em></a></li>
+        <li><a href="/#guide">观看路径<em>06</em></a></li>
+        <li><a href="/#faq">常见问答<em>07</em></a></li>
+        <li><a href="/#comments">观众评论<em>08</em></a></li>
+        <li><a href="/#news">相关资讯<em>09</em></a></li>
+        <li><a href="/#recs">延伸条目<em>10</em></a></li>
+        <li><a href="/#timeline">传播时间线<em>11</em></a></li>
+        <li><a href="/#submit">投稿交流<em>12</em></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main>
+    <!-- 01 概览 -->
+    <section class="block" id="overview">
+      <div class="block-head">
+        <h2>天台对话梗源概览<small>出处、变体与当前讨论重心</small></h2>
+      </div>
+      <div class="overview">
+        <p>这条梗的原型是一段拍摄于 2021 年 6 月的手机竖屏视频：画面里两名年轻人在楼顶天台对话，其中被称作“大白”的一方连说三句反问，被另一人称作“二姐”的角色回了一句“你强上也没用”。原始视频时长 47 秒，由账号“阿舟日常”首发在短视频平台，当时播放量不到两万，评论区只有几十条。</p>
+        <p>真正让它扩散的是 2023 年 9 月的一次二创。剪辑者“老K切片”把三句反问单独截出，配上鼓点做成一分钟循环，视频在一周内转发过十万。此后“反手三连”“天台版”“楼梯间版”“方言版”陆续出现，台词被改写、角色被重新配音，甚至出现了把画面倒放后重新对口型的版本。</p>
+        <p>当前讨论集中在三处：一是原始 47 秒版本与后来流传的 1 分 12 秒版本差在哪里；二是“强上”这个词在不同方言配音里被替换成什么；三是哪些二创属于二次演绎、哪些只是搬运加字幕。弄清楚这三件事，基本就能判断一条二创值不值得点开。</p>
+        <div class="ov-tags">
+          <span>原始录屏 47 秒</span><span>反手三连</span><span>天台版</span><span>方言配音</span><span>逐句台词对照</span><span>表情包衍生帧</span><span>二创清单</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 精选 -->
+    <section class="block" id="picks">
+      <div class="block-head">
+        <h2>精选二创与原始版本<small>按可核对程度排序</small></h2>
+        <a class="more" href="/#recs">查看延伸条目 →</a>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-thumb"><span class="badge">原始录屏</span><img src="https://picsum.photos/seed/tianTai47/400/300" width="400" height="300" loading="lazy" alt="天台对话原始录屏中两人站位的画面示意"></div>
+          <div class="card-body">
+            <h3><a href="/#deep">天台版原始 47 秒</a></h3>
+            <div class="card-meta"><span>2021-06-14 首发</span><span><b>播放 1.8 万</b></span></div>
+            <p class="card-desc">“阿舟日常”首发版本，画面有轻微手抖，结尾第 44 秒有一句被环境音盖住的话，后来多个解析帖争论的就是这句。</p>
+            <div class="tag-row"><span class="tag">原始出处</span><span class="tag">未剪辑</span><span class="tag hot">争议句</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="badge">二创</span><img src="https://picsum.photos/seed/fanshouSan/400/300" width="400" height="300" loading="lazy" alt="反手三连循环剪辑的鼓点节奏示意画面"></div>
+          <div class="card-body">
+            <h3><a href="/#updates">反手三连鼓点循环版</a></h3>
+            <div class="card-meta"><span>2023-09-21</span><span><b>转发 10.4 万</b></span></div>
+            <p class="card-desc">“老K切片”把三句反问截出配 128BPM 鼓点，副歌处画面闪三次。传播量最大的一版，也是多数人第一次看到的版本。</p>
+            <div class="tag-row"><span class="tag">循环剪辑</span><span class="tag">鼓点</span><span class="tag hot">高传播</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="badge">方言版</span><img src="https://picsum.photos/seed/fangyanPei/400/300" width="400" height="300" loading="lazy" alt="方言配音版本中字幕条与口型错位的画面"></div>
+          <div class="card-body">
+            <h3><a href="/#deep">川渝方言重配版</a></h3>
+            <div class="card-meta"><span>2024-03-02</span><span>评分 8.1</span></div>
+            <p class="card-desc">配音者“幺妹儿不睡”把三句反问改成川渝腔，“强上”换成“硬来”，口型对不上但节奏更冲，评论区分成两派。</p>
+            <div class="tag-row"><span class="tag">方言配音</span><span class="tag">词替换</span><span class="tag">口型争议</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="badge">解析</span><img src="https://picsum.photos/seed/taiciDui/400/300" width="400" height="300" loading="lazy" alt="逐句台词对照表中左右两栏字幕并列的画面"></div>
+          <div class="card-body">
+            <h3><a href="/#deep">47 秒与 72 秒台词对照</a></h3>
+            <div class="card-meta"><span>2026-11-06 更新</span><span>12 组对照</span></div>
+            <p class="card-desc">把两个流传最广的版本逐句并排，标出 11 处增删。第 5 句“你强上也没用”在后版被前移了 4 秒，是节奏变化的关键。</p>
+            <div class="tag-row"><span class="tag">台词对照</span><span class="tag">版本差异</span><span class="tag hot">可核对</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="badge">素材</span><img src="https://picsum.photos/seed/biaoqingFrame/400/300" width="400" height="300" loading="lazy" alt="表情包衍生帧中放大的面部表情与文字条"></div>
+          <div class="card-body">
+            <h3><a href="/#cats">表情包衍生帧 12 张</a></h3>
+            <div class="card-meta"><span>2026-11-05 新增</span><span>共 46 张</span></div>
+            <p class="card-desc">从原片第 18、29、41 秒截出的三帧最常用，加了白边和短句。第 29 秒那帧配“你强上也没用”传播最广。</p>
+            <div class="tag-row"><span class="tag">截图素材</span><span class="tag">配文</span><span class="tag">二次使用</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="badge">反演</span><img src="https://picsum.photos/seed/daofangBan/400/300" width="400" height="300" loading="lazy" alt="倒放对口型版本中人物动作方向反转的画面"></div>
+          <div class="card-body">
+            <h3><a href="/#updates">倒放对口型版</a></h3>
+            <div class="card-meta"><span>2025-12-11</span><span><b>播放 62 万</b></span></div>
+            <p class="card-desc">整段倒放后重新配音，三句反问变成先答后问。逻辑全乱，反而成了“鬼畜区”常客，弹幕里有人专门整理倒放台词。</p>
+            <div class="tag-row"><span class="tag">倒放</span><span class="tag">鬼畜</span><span class="tag">逻辑错位</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="badge">舞台</span><img src="https://picsum.photos/seed/loutijian/400/300" width="400" height="300" loading="lazy" alt="楼梯间重演版本中较暗光线与狭窄空间的画面"></div>
+          <div class="card-body">
+            <h3><a href="/#cats">楼梯间重演版</a></h3>
+            <div class="card-meta"><span>2024-07-19</span><span>评分 6.4</span></div>
+            <p class="card-desc">换了场地重拍，光线更暗，台词基本照搬但语速快了三分之一。有人说更贴近原味，有人嫌表演痕迹重。</p>
+            <div class="tag-row"><span class="tag">重演</span><span class="tag">场地替换</span><span class="tag">语速差异</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="badge">考据</span><img src="https://picsum.photos/seed/kaojuBiao/400/300" width="400" height="300" loading="lazy" alt="考据帖中时间轴截图与发布记录并列的画面"></div>
+          <div class="card-body">
+            <h3><a href="/#news">首发时间考据帖</a></h3>
+            <div class="card-meta"><span>2026-10-28</span><span>引证 9 条</span></div>
+            <p class="card-desc">作者“冷板凳研究员”用平台发布记录、录屏文件属性和三条早期评论，论证原始上传时间在 6 月 14 日 21 点前后。</p>
+            <div class="tag-row"><span class="tag">时间考据</span><span class="tag">文件属性</span><span class="tag">早期评论</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 03 更新 -->
+    <section class="block" id="updates">
+      <div class="block-head">
+        <h2>近三十天更新动态<small>条目录入与素材补档</small></h2>
+      </div>
+      <ul class="feed">
+        <li><time>11-08</time><div><b>《二姐反手三连》第 7 版台词对照表上线</b><span>新增 2024 年粤语配音版的三句替换词，对照行数从 9 组增至 12 组。</span></div></li>
+        <li><time>11-07</time><div><b>“海角天台版”原始录屏补入时间线</b><span>补上 2021-06-14 首发节点，并注明原片中第 44 秒环境音遮盖句的三种听写结果。</span></div></li>
+        <li><time>11-05</time><div><b>表情包素材库新增 12 张衍生帧</b><span>取自原片 18、29、41 秒，另加 9 张二创视频截图，全部标注来源与时间点。</span></div></li>
+        <li><time>11-03</time><div><b>“倒放对口型版”播放量记录更新</b><span>该版本在短视频平台累计播放 62 万，弹幕整理帖已收录 340 条倒放台词注音。</span></div></li>
+        <li><time>10-31</time><div><b>方言替换词表补入闽南语条目</b><span>“强上”在闽南语配音里被替换成“硬冲”，配音者为账号“海风阿伯”。</span></div></li>
+        <li><time>10-28</time><div><b>首发时间考据帖收录</b><span>作者“冷板凳研究员”用 9 条引证支持 6 月 14 日 21 点前后的上传判断。</span></div></li>
+        <li><time>10-24</time><div><b>楼梯间重演版评分修订</b><span>样本从 210 条增至 386 条，评分由 6.7 调整为 6.4，差评集中在表演痕迹。</span></div></li>
+        <li><time>10-20</time><div><b>新增“逐句口型对位”分类</b><span>把明显对不上口型的二创单列，目前收录 7 条，附错位时间点。</span></div></li>
+        <li><time>10-16</time><div><b>评论区高频词统计发布</b><span>近 30 天 1.2 万条评论里，“强上”出现 4100 次，“二姐”出现 3300 次，“天台”出现 1900 次。</span></div></li>
+        <li><time>10-11</time><div><b>“阿舟日常”账号状态更新</b><span>原发布账号自 2022 年后未再更新，主页仅保留 6 条早期视频。</span></div></li>
+      </ul>
+    </section>
+
+    <!-- 04 分类 -->
+    <section class="block" id="cats">
+      <div class="block-head">
+        <h2>按版本类型查找<small>点击定位到对应条目</small></h2>
+      </div>
+      <div class="cat-grid">
+        <a class="cat" href="/#picks"><b>原始录屏</b><span>2021 年首发版本及未剪辑片段</span><em>3 条</em></a>
+        <a class="cat" href="/#picks"><b>循环剪辑</b><span>鼓点、变速、重复片段类二创</span><em>9 条</em></a>
+        <a class="cat" href="/#deep"><b>方言配音</b><span>川渝、粤语、闽南语等重配版本</span><em>6 条</em></a>
+        <a class="cat" href="/#updates"><b>倒放与鬼畜</b><span>倒放、变速、错位对口型</span><em>7 条</em></a>
+        <a class="cat" href="/#picks"><b>重演翻拍</b><span>换场地、换演员的实拍版本</span><em>5 条</em></a>
+        <a class="cat" href="/#cats"><b>表情包素材</b><span>截图帧、配文模板、白边图</span><em>46 张</em></a>
+        <a class="cat" href="/#deep"><b>台词对照</b><span>逐句并排、增删标注</span><em>12 组</em></a>
+        <a class="cat" href="/#news"><b>考据与时间线</b><span>首发时间、文件属性、早期评论</span><em>4 帖</em></a>
+      </div>
+    </section>
+
+    <!-- 05 深度解析 -->
+    <section class="block" id="deep">
+      <div class="block-head">
+        <h2>三个版本差在哪里<small>以台词、节奏、口型为轴</small></h2>
+      </div>
+      <div class="deep">
+        <h3>47 秒原片与 72 秒流传版：多出来的 25 秒是什么</h3>
+        <p>两个版本并排后最明显的差别不在结尾，而在开头。原片前 6 秒是环境音和调整机位，72 秒版把这段剪掉，直接从第一句反问切入，于是观众感知到的“第一句话”被提前了。第 5 句“你强上也没用”在原片中位于第 27 秒，流传版里被前移到第 23 秒——这 4 秒的提前，恰好卡在鼓点循环版的副歌位置，所以多数人记住的节奏其实来自剪辑，不是原片。</p>
+        <p>多出来的 25 秒里，有 11 秒是两人笑场后的停顿，7 秒是远处施工噪音，剩下 7 秒是一段被环境音盖住的低语。这段低语至少有三份听写：一份记为“你试试看”，一份记为“你别闹了”，一份只标了三个问号。三份听写都没有音轨增强后的公开版本支撑，属于网友推测层，不能当作已确认台词。</p>
+        <div class="quote">按信息层级摆：已公开事实是原片 47 秒、首发 2021-06-14；当事人回应是“阿舟日常”2021-06-20 在评论区写过“当时就是随便拍的”；媒体转述见于两家本地生活号的复盘稿；网友推测集中在第 44 秒那句低语。</div>
+
+        <h3>方言配音的替换词，决定了这版好不好笑</h3>
+        <p>川渝版把“强上”换成“硬来”，粤语版换成“夹硬嚟”，闽南语版换成“硬冲”。三种替换里，“硬来”最贴近原句的蛮横感，“夹硬嚟”多了点市井气，“硬冲”则偏动作化，少了那层“说了也没用”的无力感。好笑与否不取决于方言本身，取决于替换词有没有保住原句里“做了也白做”的意思。</p>
+        <p>口型对不上是方言版的通病。川渝版第 2 句结尾多了一个拖音，画面里嘴已经闭上，声音还在；粤语版第 3 句开头快了半拍。对不上的地方集中在三句反问的句尾，因为原片说话人有明显的收声动作。要判断一版方言配音用不用心，看它有没有在句尾做减速处理，而不是看配音者的口音像不像。</p>
+
+        <h3>把“传播快”拆开：速度来自哪三个环节</h3>
+        <p>说这条梗“传得快”太笼统。拆开看，速度至少来自三个可核对的环节。第一个是截取成本：三句反问只有 9 秒，任何人用手机都能截，不需要剪辑软件。第二个是配乐适配度：128BPM 的鼓点循环原片节奏几乎天然吻合，剪辑者“老K切片”在评论区说过“只调了一次速度”。第三个是二次使用的低门槛：表情包三帧都是从固定秒数截的，配文模板只有五种，复制成本极低。</p>
+        <table class="check-table">
+          <thead><tr><th>环节</th><th>可核对依据</th><th>缺失项（会导致传播判断失真）</th></tr></thead>
+          <tbody>
+            <tr><td><b>截取成本低</b></td><td>9 秒片段，手机即可截取</td><td>未统计有多少人截了但没发</td></tr>
+            <tr><td><b>配乐适配</b></td><td>128BPM，剪辑者称只调一次速度</td><td>缺少其他 BPM 版本的对照数据</td></tr>
+            <tr><td><b>模板复制</b></td><td>3 帧截图，5 种配文模板</td><td>无法确认模板的最早作者</td></tr>
+          </tbody>
+        </table>
+        <p>三个环节都成立，才出现“一周转发过十万”。反过来说，如果只有配乐适配、截取成本高，传播量不会到这个量级。这个拆法也解释了为什么楼梯间重演版传播有限：场地换了，光线变了，原片那三帧的表情对不上，模板复制这一环就断了。</p>
+
+        <h3>“反手三连”这个叫法是谁定的</h3>
+        <p>“反手三连”最早出现在 2023 年 9 月 25 日的一条弹幕里，用户 ID 已不可查，截图保存在“老K切片”那条视频的第 4 分 07 秒弹幕记录中。此前评论区管这三句叫“三连问”“天台三问”。叫法统一发生在鼓点循环版爆火之后，属于观众自发命名，没有官方定名一说。</p>
+        <p>叫法一旦固定，理解就跟着变。“反手”暗含主动出击，“三连”强调数量，合起来给人的印象是说话人占了上风。回到原片，三句反问之后是被对方一句顶回来的，气势上并没有赢。名字比内容更强势，这是这条梗后来被反复误读的一个原因。</p>
+      </div>
+    </section>
+
+    <!-- 06 观看路径 -->
+    <section class="block" id="guide">
+      <div class="block-head">
+        <h2>看这条梗的顺序与取舍<small>从原片到二创的判断依据</small></h2>
+      </div>
+      <div class="steps">
+        <div class="step"><b>先看 47 秒原片</b><p>不看任何二创，先建立对原片语速、停顿、笑场位置的印象。后面所有版本都是在这上面改的，先看改版会先入为主。</p></div>
+        <div class="step"><b>再对照 72 秒版</b><p>重点看开头 6 秒和结尾多出的 25 秒。能说出这两处差在哪，基本就不会被“原片就是这样”的说法带偏。</p></div>
+        <div class="step"><b>方言版挑一版看</b><p>川渝版信息量最大，粤语版次之。看的时候只盯句尾收声，对不上的地方就是配音者没做减速处理。</p></div>
+        <div class="step"><b>鬼畜和倒放可以略过</b><p>倒放版的价值在弹幕整理，不在视频本身。除非要做研究，否则看一遍知道逻辑怎么乱的就行。</p></div>
+        <div class="step"><b>重演版按需看</b><p>楼梯间版评分 6.4，差评集中在表演痕迹。想比较场地对节奏的影响可以看，想找原味可以跳过。</p></div>
+      </div>
+    </section>
+
+    <!-- 07 FAQ -->
+    <section class="block" id="faq">
+      <div class="block-head">
+        <h2>关于这条梗的常见问题<small>六个高频疑问</small></h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>原片到底是 47 秒还是 1 分 12 秒？</summary>
+          <div class="ans">2021 年 6 月 14 日“阿舟日常”首发的版本是 47 秒，画面有手抖，结尾有施工噪音。1 分 12 秒版本出现在 2023 年 9 月之后，多出的 25 秒包含笑场停顿、环境音和一段被盖住的低语。两个版本都在流传，但只有 47 秒版能对应到首发记录。</div>
+        </details>
+        <details>
+          <summary>“强上”这个词在方言版里被换成了什么？</summary>
+          <div class="ans">川渝版换成“硬来”，粤语版换成“夹硬嚟”，闽南语版换成“硬冲”。三种替换里“硬来”最贴近原句的蛮横感，“硬冲”偏动作化，丢掉了“做了也白做”的无力感。替换词选得准不准，看它有没有保住这层意思。</div>
+        </details>
+        <details>
+          <summary>“反手三连”这个叫法从哪来的？</summary>
+          <div class="ans">最早见于 2023 年 9 月 25 日一条弹幕，截图保存在“老K切片”鼓点循环版的第 4 分 07 秒弹幕记录里。此前评论区多叫“三连问”或“天台三问”。叫法统一发生在循环版爆火之后，属于观众自发命名。</div>
+        </details>
+        <details>
+          <summary>为什么倒放版反而有人专门整理台词？</summary>
+          <div class="ans">倒放后三句反问变成先答后问，逻辑全乱，反而形成了一种固定的错位笑点。弹幕里有人逐句标注倒放后的读音，目前整理帖收录了 340 条注音。整理行为本身成了二次内容，跟视频好不好看是两件事。</div>
+        </details>
+        <details>
+          <summary>第 44 秒那句低语到底说了什么？</summary>
+          <div class="ans">目前有三份听写，分别记为“你试试看”“你别闹了”和三个问号。三份都没有音轨增强后的公开版本支撑，属于网友推测层。原发布账号 2021 年 6 月 20 日只在评论区写过“当时就是随便拍的”，没有回应这句内容。</div>
+        </details>
+        <details>
+          <summary>楼梯间重演版为什么评分不高？</summary>
+          <div class="ans">386 条样本里评分 6.4，差评集中在表演痕迹。场地换到楼梯间后光线变暗，原片那三帧的表情对不上，模板复制这一环断了。台词基本照搬，但语速快了三分之一，节奏感跟着变了。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 08 评论 -->
+    <section class="block" id="comments">
+      <div class="block-head">
+        <h2>观众评论<small>近三十天 1.2 万条中的 16 条</small></h2>
+      </div>
+      <div class="comments">
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#25455c">林</span><b>林间有雾</b><time>11-07</time></div><p>第 29 秒那帧表情包我用了两年，今天才知道原片只有 47 秒。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#e2604f">阿</span><b>阿舟的旧粉</b><time>11-06</time></div><p>2021 年就在评论区，当时真没几个人看。现在满屏“反手三连”，有点陌生。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#f2b544;color:#152a3a">冷</span><b>冷板凳研究员</b><time>11-05</time></div><p>考据帖里那 9 条引证，第 4 条的文件属性其实可以再核一遍，创建时间和修改时间差了 11 分钟。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#2d5a73">幺</span><b>幺妹儿不睡</b><time>11-04</time></div><p>川渝版录了四遍，前三遍句尾都收不住，第四遍才勉强对上。口型这事比想象中难。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#7d8a93">路</span><b>路过打酱油</b><time>11-04</time></div><p>楼梯间版看了两分钟就关了，说不清哪里不对，就是不像。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#25455c">老</span><b>老K切片本人</b><time>11-03</time></div><p>鼓点只调了一次速度，128 刚好卡上。其他 BPM 试过，副歌位置全部对不上。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#e2604f">重</span><b>重庆小面加蛋</b><time>11-02</time></div><p>“硬来”比“强上”顺口，但少了点狠劲。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#f2b544;color:#152a3a">海</span><b>海风阿伯</b><time>11-01</time></div><p>闽南语那版我自己配的，“硬冲”是随口说的，没想到会被收录进词表。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#2d5a73">一</span><b>一只咸鱼</b><time>10-30</time></div><p>倒放版弹幕比视频好看，340 条注音整理帖我存了。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#7d8a93">不</span><b>不想上班</b><time>10-29</time></div><p>说实话到现在也没搞懂为什么火，可能就是那三句反问节奏太顺。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#25455c">粤</span><b>粤语区小陈</b><time>10-28</time></div><p>“夹硬嚟”这个说法我们这边日常就在用，配上去毫无违和。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#e2604f">阿</span><b>阿舟日常老观众</b><time>10-26</time></div><p>原账号两年没更新了，主页那 6 条早期视频里，这条播放量最低，现在成了最有名的。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#f2b544;color:#152a3a">表</span><b>表情包仓库</b><time>10-24</time></div><p>41 秒那帧配什么字都别扭，还是 29 秒那帧好用。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#2d5a73">路</span><b>路过的猫</b><time>10-22</time></div><p>今天天气不错，适合睡午觉。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#7d8a93">剪</span><b>剪辑新手小李</b><time>10-21</time></div><p>试着剪了一版，鼓点位置老是偏半拍。看别人说只调一次速度，我自己调了七次。</p></div>
+        <div class="cmt"><div class="cmt-head"><span class="avatar" style="background:#25455c">南</span><b>南岸旧事</b><time>10-19</time></div><p>47 秒版和 72 秒版我都存了，前者更像现场，后者像节目。</p></div>
+      </div>
+    </section>
+
+    <!-- 09 资讯 -->
+    <section class="block" id="news">
+      <div class="block-head">
+        <h2>相关资讯<small>近三十天的条目动态</small></h2>
+      </div>
+      <div class="news">
+        <article class="news-item">
+          <div>
+            <h3><a href="/#deep">台词对照表扩到 12 组，新增粤语版三句替换词</a></h3>
+            <p>对照表第 7 版在 11 月 8 日上线，粤语版第 2、3、5 句的替换词被单列成行，此前这三句只标了“待补”。整理者同时注明粤语版第 3 句开头快了半拍。</p>
+          </div>
+          <time>2026-11-08</time>
+        </article>
+        <article class="news-item">
+          <div>
+            <h3><a href="/#timeline">“海角天台版”首发节点补入传播时间线</a></h3>
+            <p>时间线新增 2021-06-14 节点，并附原片第 44 秒低语的三种听写结果。整理者称三种听写均无音轨增强版本支撑，归入推测层。</p>
+          </div>
+          <time>2026-11-07</time>
+        </article>
+        <article class="news-item">
+          <div>
+            <h3><a href="/#cats">表情包素材库增至 46 张，新增 12 张衍生帧</a></h3>
+            <p>新增帧取自原片 18、29、41 秒及 9 张二创视频截图。29 秒那帧配文“你强上也没用”，是目前使用量最高的一张。</p>
+          </div>
+          <time>2026-11-05</time>
+        </article>
+        <article class="news-item">
+          <div>
+            <h3><a href="/#updates">倒放对口型版累计播放 62 万，弹幕注音帖收录 340 条</a></h3>
+            <p>该版本 2025-12-11 上线，近一个月播放量增长 18 万。弹幕整理帖逐句标注倒放后的读音，最长一条注释有 47 字。</p>
+          </div>
+          <time>2026-11-03</time>
+        </article>
+        <article class="news-item">
+          <div>
+            <h3><a href="/#deep">闽南语配音版替换词“硬冲”被补入方言词表</a></h3>
+            <p>配音者“海风阿伯”在评论中确认“硬冲”为即兴替换。词表目前收录川渝“硬来”、粤语“夹硬嚟”、闽南语“硬冲”三条。</p>
+          </div>
+          <time>2026-10-31</time>
+        </article>
+        <article class="news-item">
+          <div>
+            <h3><a href="/#news">首发时间考据帖引证 9 条，支持 6 月 14 日 21 点前后上传</a></h3>
+            <p>作者比对平台发布记录、录屏文件属性和三条早期评论，其中文件创建时间与修改时间相差 11 分钟，被网友指出需再核。</p>
+          </div>
+          <time>2026-10-28</time>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10 推荐 -->
+    <section class="block" id="recs">
+      <div class="block-head">
+        <h2>延伸条目与相关梗<small>同一时期、相近结构的条目</small></h2>
+      </div>
+      <div class="rec-row">
+        <a href="/#picks">天台对话类短视频合集</a>
+        <a href="/#deep">三连问句式梗对照</a>
+        <a href="/#cats">方言重配二创清单</a>
+        <a href="/#updates">倒放鬼畜版本索引</a>
+        <a href="/#news">2021 年短视频首发考据</a>
+        <a href="/#cats">表情包三帧模板</a>
+        <a href="/#deep">128BPM 鼓点剪辑法</a>
+        <a href="/#guide">原片与流传版差异清单</a>
+      </div>
+    </section>
+
+    <!-- 11 时间线 -->
+    <section class="block" id="timeline">
+      <div class="block-head">
+        <h2>传播时间线<small>从首发到当前可核对节点</small></h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item"><b>原始录屏首发</b><time>2021-06-14</time><span>“阿舟日常”发布 47 秒竖屏视频，首周播放 1.8 万。</span></div>
+        <div class="tl-item"><b>发布者首次回应</b><time>2021-06-20</time><span>评论区留言“当时就是随便拍的”，未回应第 44 秒低语内容。</span></div>
+        <div class="tl-item"><b>账号停更</b><time>2022 年内</time><span>“阿舟日常”主页停留在 6 条早期视频，此后无更新。</span></div>
+        <div class="tl-item"><b>鼓点循环版爆火</b><time>2023-09-21</time><span>“老K切片”发布 128BPM 循环版，一周转发 10.4 万。</span></div>
+        <div class="tl-item"><b>“反手三连”叫法出现</b><time>2023-09-25</time><span>弹幕首次使用该叫法，截图保存在循环版第 4 分 07 秒。</span></div>
+        <div class="tl-item"><b>川渝方言版上线</b><time>2024-03-02</time><span>“幺妹儿不睡”重配，“强上”替换为“硬来”，口型错位集中在句尾。</span></div>
+        <div class="tl-item"><b>楼梯间重演版</b><time>2024-07-19</time><span>换场地实拍，语速快三分之一，后期评分 6.4。</span></div>
+        <div class="tl-item"><b>倒放对口型版</b><time>2025-12-11</time><span>整段倒放重配，弹幕注音帖随后出现。</span></div>
+        <div class="tl-item"><b>台词对照表第 7 版</b><time>2026-11-08</time><span>对照行数增至 12 组，补入粤语版替换词。</span></div>
+      </div>
+    </section>
+
+    <!-- 12 投稿 -->
+    <section class="block" id="submit">
+      <div class="submit-band">
+        <div>
+          <h2>投稿：你手里的版本可能比整理的多</h2>
+          <p>如果你保存了 2021 年的原始录屏、没被收录的方言配音，或者听清了第 44 秒那句低语，可以通过投稿入口提交。提交时注明获取时间、平台来源和文件时长，方便与现有 38 条版本比对。</p>
+        </div>
+        <div class="acts">
+          <a class="sb-a" href="/#submit">提交版本线索</a>
+          <a class="sb-b" href="/#comments">参与评论交流</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="col-right">
+    <div class="side-card">
+      <h2>二创热度榜</h2>
+      <ol class="hot-list">
+        <li><a href="/#picks">反手三连鼓点循环版</a></li>
+        <li><a href="/#updates">倒放对口型版</a></li>
+        <li><a href="/#picks">川渝方言重配版</a></li>
+        <li><a href="/#picks">楼梯间重演版</a></li>
+        <li><a href="/#deep">47 秒与 72 秒台词对照</a></li>
+        <li><a href="/#cats">表情包衍生帧 29 秒版</a></li>
+      </ol>
+    </div>
+    <div class="side-card">
+      <h2>最近补录</h2>
+      <ul class="update-list">
+        <li><time>11-08</time><span>台词对照表第 7 版</span></li>
+        <li><time>11-07</time><span>首发节点补入时间线</span></li>
+        <li><time>11-05</time><span>12 张衍生帧</span></li>
+        <li><time>11-03</time><span>倒放版播放 62 万</span></li>
+        <li><time>10-31</time><span>闽南语“硬冲”入表</span></li>
+      </ul>
+    </div>
+    <div class="side-card">
+      <h2>版本速查</h2>
+      <ul class="update-list">
+        <li><span>原始录屏 47 秒</span></li>
+        <li><span>流传版 1 分 12 秒</span></li>
+        <li><span>鼓点 128BPM 循环</span></li>
+        <li><span>方言版 3 种替换词</span></li>
+        <li><span>重演版评分 6.4</span></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#25455c"/>
+          <path d="M12 44c8-22 14-22 20 0s10 2 20-14" stroke="#f2b544" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <circle cx="50" cy="20" r="6" fill="#e2604f"/>
+        </svg>
+        <b>海角强上大白二姐</b>
+      </div>
+      <p>内容覆盖 2021 年 6 月首发至 2026 年 11 月的 38 条版本，包括原始录屏、循环剪辑、方言重配、倒放鬼畜、实拍重演五类，另附 46 张截图素材与 12 组逐句台词对照。补录节奏为每周一到两次，遇新版本上线当日追加。</p>
+    </div>
+    <div>
+      <h3>条目分类</h3>
+      <ul>
+        <li><a href="/#picks">原始录屏与精选</a></li>
+        <li><a href="/#cats">方言配音</a></li>
+        <li><a href="/#updates">倒放与鬼畜</a></li>
+        <li><a href="/#cats">表情包素材</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>解析与考据</h3>
+      <ul>
+        <li><a href="/#deep">版本差异解析</a></li>
+        <li><a href="/#timeline">传播时间线</a></li>
+        <li><a href="/#news">首发考据</a></li>
+        <li><a href="/#faq">常见问答</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>参与</h3>
+      <ul>
+        <li><a href="/#submit">投稿版本线索</a></li>
+        <li><a href="/#comments">观众评论</a></li>
+        <li><a href="/#recs">延伸条目</a></li>
+        <li><a href="/#guide">观看路径</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>页面条目、评分、播放量为整理示例数据</span><span>最近更新 2026-11-08</span><span>内容仅供梗源查阅</span>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  var searchInput=document.getElementById('searchInput');
+  var cards=Array.prototype.slice.call(document.querySelectorAll('.card, .feed li, .news-item, .cmt, .tl-item'));
+  var emptyTip=document.createElement('div');
+  emptyTip.className='search-empty';
+  emptyTip.textContent='没有匹配的条目，换个关键词试试，比如“反手三连”“方言”“倒放”。';
+  var main=document.querySelector('main');
+  if(main){main.parentNode.insertBefore(emptyTip,main);}
+
+  if(searchInput){
+    searchInput.addEventListener('input',function(){
+      var q=this.value.trim().toLowerCase();
+      if(!q){cards.forEach(function(c){c.style.display='';});emptyTip.style.display='none';return;}
+      var hit=0;
+      cards.forEach(function(c){
+        var t=(c.textContent||'').toLowerCase();
+        var ok=t.indexOf(q)>-1;
+        c.style.display=ok?'':'none';
+        if(ok)hit++;
+      });
+      emptyTip.style.display=hit?'none':'block';
+    });
+  }
+
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>window.innerHeight*0.8){toTop.classList.add('show');}
+    else{toTop.classList.remove('show');}
+  },{passive:true});
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var colLeft=document.getElementById('channelCol');
+  var mask=document.getElementById('mask');
+  var burger=document.getElementById('hamburger');
+  function closeMenu(){
+    colLeft.classList.remove('open');
+    mask.classList.remove('show');
+    burger.setAttribute('aria-expanded','false');
+  }
+  burger.addEventListener('click',function(){
+    var open=colLeft.classList.toggle('open');
+    mask.classList.toggle('show',open);
+    burger.setAttribute('aria-expanded',open?'true':'false');
+  });
+  mask.addEventListener('click',closeMenu);
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){closeMenu();}
+  });
+  colLeft.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      if(window.innerWidth<=1024){closeMenu();}
+    });
+  });
+
+  var navLinks=document.querySelectorAll('.channel-nav a');
+  var sections=Array.prototype.slice.call(document.querySelectorAll('main section.block'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var id=en.target.id;
+          navLinks.forEach(function(l){
+            l.classList.toggle('active',l.getAttribute('href')==='/# '+id || l.getAttribute('href')==='#'+id || l.getAttribute('href').indexOf(id)>-1 && l.getAttribute('href').charAt(1)==='#');
+          });
+        }
+      });
+    },{rootMargin:'-140px 0px -60% 0px',threshold:0});
+    sections.forEach(function(s){io.observe(s);});
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"海角强上大白二姐",
+  "description":"网络梗源流与二创内容索引，汇集原始录屏、台词对照、方言配音、表情包素材与传播时间线。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"原片到底是47秒还是1分12秒？","acceptedAnswer":{"@type":"Answer","text":"2021年6月14日“阿舟日常”首发的版本是47秒，画面有手抖，结尾有施工噪音。1分12秒版本出现在2023年9月之后，多出的25秒包含笑场停顿、环境音和一段被盖住的低语。"}},
+    {"@type":"Question","name":"“强上”这个词在方言版里被换成了什么？","acceptedAnswer":{"@type":"Answer","text":"川渝版换成“硬来”，粤语版换成“夹硬嚟”，闽南语版换成“硬冲”。三种替换里“硬来”最贴近原句的蛮横感，“硬冲”偏动作化。"}},
+    {"@type":"Question","name":"“反手三连”这个叫法从哪来的？","acceptedAnswer":{"@type":"Answer","text":"最早见于2023年9月25日一条弹幕，截图保存在“老K切片”鼓点循环版的第4分07秒弹幕记录里。此前评论区多叫“三连问”或“天台三问”。"}},
+    {"@type":"Question","name":"为什么倒放版反而有人专门整理台词？","acceptedAnswer":{"@type":"Answer","text":"倒放后三句反问变成先答后问，逻辑全乱，形成固定的错位笑点。弹幕里有人逐句标注倒放后的读音，目前整理帖收录了340条注音。"}},
+    {"@type":"Question","name":"第44秒那句低语到底说了什么？","acceptedAnswer":{"@type":"Answer","text":"目前有三份听写，分别记为“你试试看”“你别闹了”和三个问号，均无音轨增强后的公开版本支撑，属于网友推测层。"}},
+    {"@type":"Question","name":"楼梯间重演版为什么评分不高？","acceptedAnswer":{"@type":"Answer","text":"386条样本里评分6.4，差评集中在表演痕迹。场地换到楼梯间后光线变暗，原片那三帧的表情对不上，模板复制这一环断了。"}}
+  ]
+}
+</script>
+</body>
+                                                                                                                                    </html>
