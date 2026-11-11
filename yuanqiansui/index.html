@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>原千岁 - 作品动态与演出资料聚合</title>
+<meta name="description" content="原千岁作品与演出资料聚合，收录舞台剧、影视条目、公演日程与观众口碑，整理角色设定、场次信息和选看顺序，供关注其舞台与荧幕作品的观众查阅。">
+<meta name="keywords" content="原千岁">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2324403a'/%3E%3Cpath d='M18 44V20h10a8 8 0 0 1 0 16h-4v8z' fill='%23e8d9b0'/%3E%3Ccircle cx='45' cy='26' r='6' fill='%23c96b4a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --c-primary:#24403a;
+  --c-primary-l:#3a5f56;
+  --c-primary-d:#162a26;
+  --c-accent:#c96b4a;
+  --c-accent-l:#e8a184;
+  --c-bg:#f6f3ec;
+  --c-panel:#fffdf8;
+  --c-panel-2:#efeae0;
+  --t-1:#1d2320;
+  --t-2:#4e5a55;
+  --t-3:#84908a;
+  --line:#ddd6c8;
+  --line-strong:#c3baa8;
+  --r-card:12px;
+  --r-btn:8px;
+  --r-tag:999px;
+  --r-banner:16px;
+  --sh:0 1px 2px rgba(30,40,35,.06),0 4px 14px rgba(30,40,35,.05);
+  --sh-h:0 2px 6px rgba(30,40,35,.10),0 10px 26px rgba(30,40,35,.10);
+  --sticky-h:96px;
+  --maxw:1320px;
+  --ff:"Noto Serif SC","Songti SC",Georgia,"Times New Roman",serif;
+  --ff-s:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-h)}
+body{
+  margin:0;background:var(--c-bg);color:var(--t-1);
+  font-family:var(--ff-s);font-size:16px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--c-primary-l);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{font-family:var(--ff);line-height:1.35;margin:0}
+p{margin:0 0 .9em}
+ul,ol{margin:0 0 .9em;padding-left:1.3em}
+li{margin:.25em 0}
+button{font-family:inherit}
+
+/* ============ 吸顶公告条 + 页头 ============ */
+.sticky-top{position:sticky;top:0;z-index:60}
+.announce{
+  background:var(--c-primary-d);color:#efeae0;font-size:13.5px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.announce .in{
+  max-width:var(--maxw);margin:0 auto;padding:7px 20px;
+  display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+}
+.announce .brand-mini{font-weight:700;letter-spacing:.06em;color:var(--c-accent-l)}
+.announce .dot{width:5px;height:5px;border-radius:50%;background:var(--c-accent-l);flex:0 0 auto}
+.announce ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;flex-wrap:wrap}
+.announce li{display:flex;gap:8px;align-items:baseline;margin:0}
+.announce time{color:#c8c0ae;font-variant-numeric:tabular-nums;font-size:12.5px}
+.announce b{font-weight:600;color:#fff}
+
+.site-head{
+  background:rgba(246,243,236,.92);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.head-in{
+  max-width:var(--maxw);margin:0 auto;padding:10px 20px;
+  display:flex;align-items:center;gap:26px;
+}
+.logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.logo svg{width:38px;height:38px;flex:0 0 auto}
+.logo-txt{font-family:var(--ff);font-size:21px;font-weight:700;color:var(--c-primary-d);letter-spacing:.05em}
+.logo-sub{display:block;font-family:var(--ff-s);font-size:10.5px;letter-spacing:.22em;color:var(--t-3);font-weight:400;margin-top:-2px}
+.head-nav{display:flex;gap:4px;flex-wrap:wrap;flex:1 1 auto}
+.head-nav a{
+  padding:6px 11px;border-radius:var(--r-btn);font-size:14.5px;color:var(--t-2);
+  white-space:nowrap;
+}
+.head-nav a:hover{background:var(--c-panel-2);color:var(--c-primary-d);text-decoration:none}
+.head-tools{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.search-box{position:relative}
+.search-box input{
+  width:170px;padding:7px 12px 7px 30px;border:1px solid var(--line-strong);
+  border-radius:var(--r-tag);background:var(--c-panel);font-size:13.5px;color:var(--t-1);
+  font-family:inherit;
+}
+.search-box input:focus{outline:2px solid var(--c-primary-l);outline-offset:1px;border-color:var(--c-primary-l)}
+.search-box .mag{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--t-3);fill:none;stroke-width:2}
+.search-hint{position:absolute;top:calc(100% + 6px);left:0;width:250px;background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-btn);box-shadow:var(--sh-h);padding:8px;font-size:13px;display:none;z-index:70;max-height:300px;overflow:auto}
+.search-hint.on{display:block}
+.search-hint a{display:block;padding:5px 8px;border-radius:6px;color:var(--t-1)}
+.search-hint a:hover{background:var(--c-panel-2);text-decoration:none}
+.search-hint .none{color:var(--t-3);padding:6px 8px}
+.btn-ghost{
+  border:1px solid var(--c-primary-l);color:var(--c-primary-l);background:transparent;
+  padding:6px 14px;border-radius:var(--r-btn);font-size:13.5px;cursor:pointer;
+}
+.btn-ghost:hover{background:var(--c-primary-l);color:#fff}
+.hamb{display:none;border:1px solid var(--line-strong);background:var(--c-panel);border-radius:var(--r-btn);width:40px;height:36px;align-items:center;justify-content:center;cursor:pointer}
+.hamb span{display:block;width:18px;height:2px;background:var(--c-primary-d);position:relative}
+.hamb span::before,.hamb span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--c-primary-d)}
+.hamb span::before{top:-6px}.hamb span::after{top:6px}
+
+/* ============ 首屏 ============ */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1100px 460px at 88% -18%,rgba(201,107,74,.20),transparent 62%),
+    radial-gradient(760px 400px at 4% 108%,rgba(58,95,86,.26),transparent 60%),
+    linear-gradient(168deg,#20362f 0%,#2b4a41 52%,#1a2b26 100%);
+  color:#f2eee3;
+}
+.hero .in{
+  max-width:var(--maxw);margin:0 auto;padding:52px 20px 44px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+  position:relative;z-index:2;
+}
+.hero-kicker{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.18em;color:var(--c-accent-l);margin-bottom:14px}
+.hero-kicker::before{content:"";width:26px;height:1px;background:var(--c-accent-l)}
+.hero h1{
+  font-size:clamp(38px,5.4vw,62px);letter-spacing:.08em;color:#fff;
+  margin-bottom:14px;text-shadow:0 2px 20px rgba(0,0,0,.22);
+}
+.hero-desc{font-size:16.5px;line-height:1.9;color:#d9d3c4;max-width:33em;margin-bottom:24px}
+.hero-desc b{color:#fff;font-weight:600}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn-main{
+  display:inline-block;background:var(--c-accent);color:#fff;padding:10px 22px;
+  border-radius:var(--r-btn);font-size:14.5px;font-weight:600;letter-spacing:.04em;
+  box-shadow:0 4px 16px rgba(201,107,74,.34);transition:transform .18s,box-shadow .18s;
+}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,107,74,.42);text-decoration:none;color:#fff}
+.btn-line{display:inline-block;border:1px solid rgba(242,238,227,.42);color:#f2eee3;padding:10px 20px;border-radius:var(--r-btn);font-size:14.5px;transition:background .18s}
+.btn-line:hover{background:rgba(242,238,227,.12);text-decoration:none;color:#fff}
+.hero-stats{display:flex;gap:26px;border-top:1px solid rgba(242,238,227,.18);padding-top:16px;flex-wrap:wrap}
+.hero-stats div{font-size:12.5px;color:#b8b1a0;letter-spacing:.05em}
+.hero-stats b{display:block;font-family:var(--ff);font-size:23px;color:#fff;letter-spacing:.02em}
+.hero-visual{position:relative;min-height:300px}
+.hero-visual svg{width:100%;height:auto;display:block;filter:drop-shadow(0 12px 32px rgba(0,0,0,.30))}
+.hero-visual .cap{
+  position:absolute;right:4px;bottom:-6px;font-size:11.5px;color:#a9a292;letter-spacing:.1em;
+}
+
+/* ============ 布局：三栏门户 ============ */
+.layout{
+  max-width:var(--maxw);margin:0 auto;padding:34px 20px 60px;
+  display:grid;grid-template-columns:186px minmax(0,1fr) 248px;gap:30px;
+  align-items:start;
+}
+.col-left{position:sticky;top:calc(var(--sticky-h) + 16px);align-self:start}
+.channel-nav{background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);padding:12px 10px;box-shadow:var(--sh)}
+.channel-nav h2{font-size:12.5px;letter-spacing:.16em;color:var(--t-3);font-family:var(--ff-s);font-weight:600;padding:4px 10px 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.channel-nav ul{list-style:none;margin:0;padding:0}
+.channel-nav li{margin:0}
+.channel-nav a{
+  display:flex;justify-content:space-between;align-items:center;gap:6px;
+  padding:7px 10px;border-radius:6px;font-size:14px;color:var(--t-2);
+}
+.channel-nav a:hover{background:var(--c-panel-2);color:var(--c-primary-d);text-decoration:none}
+.channel-nav a.current{background:var(--c-primary);color:#fff;font-weight:600}
+.channel-nav a.current .cnt{color:rgba(255,255,255,.65)}
+.channel-nav .cnt{font-size:11.5px;color:var(--t-3);font-variant-numeric:tabular-nums}
+.channel-note{font-size:12px;color:var(--t-3);line-height:1.7;padding:10px 10px 2px;border-top:1px dashed var(--line);margin-top:8px}
+
+.col-main{min-width:0}
+.col-right{display:flex;flex-direction:column;gap:22px;position:sticky;top:calc(var(--sticky-h) + 16px)}
+
+/* 通用板块 */
+.sec{margin-bottom:38px;scroll-margin-top:var(--sticky-h)}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.sec-head h2{font-size:22px;color:var(--c-primary-d);letter-spacing:.03em}
+.sec-head .tagline{font-size:13px;color:var(--t-3)}
+.sec-head .more{margin-left:auto;font-size:13px;color:var(--c-primary-l)}
+.sec-head .more:hover{text-decoration:underline}
+
+/* 概览 */
+.overview{
+  background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);
+  padding:22px 24px;box-shadow:var(--sh);
+}
+.overview p{font-size:15.5px;line-height:1.95;color:var(--t-2)}
+.overview p:last-child{margin-bottom:0}
+.overview .lead{font-size:16.5px;color:var(--t-1)}
+.overview strong{color:var(--c-primary-d);font-weight:700}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{
+  background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);
+  overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh-h)}
+.card .thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--c-panel-2)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.card:hover .thumb img{transform:scale(1.04)}
+.card .kind{
+  position:absolute;left:10px;top:10px;background:rgba(22,42,38,.86);color:#f2eee3;
+  font-size:11.5px;padding:3px 9px;border-radius:var(--r-tag);letter-spacing:.06em;
+}
+.card .body{padding:13px 14px 15px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:16.5px;color:var(--c-primary-d);margin-bottom:7px;letter-spacing:.01em}
+.card .desc{font-size:13.5px;line-height:1.72;color:var(--t-2);margin-bottom:10px;flex:1}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.tags span{font-size:11.5px;background:var(--c-panel-2);color:var(--t-2);padding:2px 8px;border-radius:var(--r-tag)}
+.card .meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--t-3);border-top:1px dashed var(--line);padding-top:9px}
+.card .score{color:var(--c-accent);font-weight:700;font-size:13.5px}
+.card .score small{color:var(--t-3);font-weight:400;font-size:11px}
+
+/* 动态列表 */
+.updates{background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh)}
+.updates li{list-style:none}
+.updates ul{margin:0;padding:0}
+.up-row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);align-items:baseline}
+.up-row:last-child{border-bottom:0}
+.up-row time{font-size:12.5px;color:var(--t-3);font-variant-numeric:tabular-nums}
+.up-row b{color:var(--c-primary-d);font-weight:600}
+.up-row span{font-size:14px;color:var(--t-2)}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cat{
+  display:block;background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);
+  padding:14px 15px;transition:border-color .18s,background .18s,transform .18s;cursor:pointer;
+}
+.cat:hover{border-color:var(--c-primary-l);background:#fbf9f3;transform:translateY(-2px);text-decoration:none}
+.cat b{display:block;font-size:15px;color:var(--c-primary-d);margin-bottom:3px}
+.cat small{font-size:12px;color:var(--t-3);line-height:1.6}
+.cat.on{border-color:var(--c-accent);background:#fdf3ee;box-shadow:0 0 0 2px rgba(201,107,74,.14)}
+.filter-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;font-size:13px;color:var(--t-3)}
+.filter-bar .reset{border:1px solid var(--line-strong);background:var(--c-panel);border-radius:var(--r-tag);padding:3px 12px;font-size:12.5px;color:var(--t-2);cursor:pointer}
+.filter-bar .reset:hover{color:var(--c-primary-d);border-color:var(--c-primary-l)}
+.filter-result{font-size:13.5px;color:var(--t-2)}
+.filter-result .empty{color:var(--c-accent);background:#fdf3ee;border:1px dashed var(--c-accent);border-radius:var(--r-btn);padding:14px 16px}
+
+/* 深度解析 */
+.deep{background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);padding:26px 28px;box-shadow:var(--sh)}
+.deep h3{font-size:18px;color:var(--c-primary-d);margin:26px 0 10px;padding-left:12px;border-left:3px solid var(--c-accent)}
+.deep h3:first-of-type{margin-top:6px}
+.deep p{font-size:15.5px;line-height:1.95;color:var(--t-2)}
+.deep ul,.deep ol{font-size:15px;line-height:1.9;color:var(--t-2)}
+.deep li b{color:var(--c-primary-d)}
+.deep .pull{
+  background:var(--c-panel-2);border-radius:var(--r-btn);padding:14px 18px;
+  font-size:14.5px;color:var(--c-primary-d);border-left:3px solid var(--c-primary-l);margin:16px 0;
+}
+.deep table{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0 18px}
+.deep th,.deep td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top;color:var(--t-2)}
+.deep th{background:var(--c-panel-2);color:var(--c-primary-d);font-weight:600;font-size:13.5px}
+
+/* 体验路径 步骤 */
+.steps{counter-reset:s;display:grid;gap:12px}
+.step{
+  counter-increment:s;background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);
+  padding:15px 18px 15px 58px;position:relative;
+}
+.step::before{
+  content:counter(s,decimal-leading-zero);position:absolute;left:16px;top:14px;
+  font-family:var(--ff);font-size:19px;color:var(--c-accent);font-weight:700;
+}
+.step b{display:block;font-size:15.5px;color:var(--c-primary-d);margin-bottom:3px}
+.step span{font-size:14px;color:var(--t-2);line-height:1.8}
+
+/* FAQ */
+.faq details{
+  background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);
+  margin-bottom:10px;overflow:hidden;
+}
+.faq summary{
+  cursor:pointer;padding:14px 18px;font-size:15.5px;font-weight:600;color:var(--c-primary-d);
+  list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:20px;color:var(--c-accent);line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:focus-visible{outline:2px solid var(--c-primary-l);outline-offset:-2px}
+.faq .ans{padding:0 18px 16px;font-size:14.5px;color:var(--t-2);line-height:1.9;border-top:1px dashed var(--line);padding-top:12px;margin-top:0}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cmt{background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);padding:13px 15px}
+.cmt .who{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+.avatar{width:26px;height:26px;border-radius:50%;background:var(--c-primary-l);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-weight:600}
+.cmt .name{font-size:13px;color:var(--c-primary-d);font-weight:600}
+.cmt .when{font-size:11.5px;color:var(--t-3);margin-left:auto;font-variant-numeric:tabular-nums}
+.cmt p{font-size:13.8px;line-height:1.8;color:var(--t-2);margin:0}
+.cmt .obj{font-size:11.5px;color:var(--c-accent);display:inline-block;margin-top:7px}
+
+/* 资讯 */
+.news{background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
+.news article{display:grid;grid-template-columns:132px minmax(0,1fr);gap:16px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.news article:last-child{border-bottom:0}
+.news img{width:132px;height:88px;object-fit:cover;border-radius:8px;background:var(--c-panel-2)}
+.news h3{font-size:16px;color:var(--c-primary-d);margin-bottom:5px}
+.news time{font-size:12px;color:var(--t-3);font-variant-numeric:tabular-nums;display:block;margin-bottom:4px}
+.news p{font-size:13.8px;color:var(--t-2);line-height:1.75;margin:0}
+
+/* 相关推荐 */
+.rel{display:flex;flex-wrap:wrap;gap:9px}
+.rel a{
+  display:inline-flex;align-items:center;gap:7px;background:var(--c-panel);border:1px solid var(--line);
+  border-radius:var(--r-tag);padding:6px 14px;font-size:13.5px;color:var(--t-1);
+}
+.rel a:hover{border-color:var(--c-primary-l);background:#fbf9f3;text-decoration:none;color:var(--c-primary-d)}
+.rel a i{font-style:normal;font-size:11px;color:var(--t-3)}
+
+/* 榜单 / 时间线 */
+.rank{background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
+.rank ol{list-style:none;margin:0;padding:0;counter-reset:r}
+.rank li{counter-increment:r;display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;padding:11px 16px;border-bottom:1px solid var(--line);align-items:baseline}
+.rank li:last-child{border-bottom:0}
+.rank li::before{content:counter(r);font-family:var(--ff);font-size:15px;color:var(--t-3);font-weight:700}
+.rank li:nth-child(-n+3)::before{color:var(--c-accent)}
+.rank b{font-size:14.5px;color:var(--c-primary-d);font-weight:600;display:block}
+.rank small{font-size:12.5px;color:var(--t-3);display:block;line-height:1.6}
+.rank em{font-style:normal;font-size:12.5px;color:var(--c-primary-l);font-variant-numeric:tabular-nums}
+
+.timeline{background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);padding:18px 20px 8px}
+.timeline ul{list-style:none;margin:0;padding:0 0 0 16px;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 16px 16px;margin:0}
+.timeline li::before{content:"";position:absolute;left:-23px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--c-accent);border:2px solid var(--c-panel)}
+.timeline time{font-size:12.5px;color:var(--c-accent);font-variant-numeric:tabular-nums;display:block}
+.timeline b{font-size:14.5px;color:var(--c-primary-d);display:block}
+.timeline span{font-size:13px;color:var(--t-2);line-height:1.7}
+
+/* 投稿互动 */
+.contrib{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.panel{background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);padding:18px 20px}
+.panel h3{font-size:16.5px;color:var(--c-primary-d);margin-bottom:8px}
+.panel p{font-size:14px;color:var(--t-2);line-height:1.85}
+.panel ul{font-size:14px;color:var(--t-2);line-height:1.85;margin-bottom:10px}
+.panel .mini-btn{display:inline-block;border:1px solid var(--c-primary-l);color:var(--c-primary-l);padding:5px 14px;border-radius:var(--r-btn);font-size:13px;cursor:pointer;background:transparent}
+.panel .mini-btn:hover{background:var(--c-primary-l);color:#fff;text-decoration:none}
+
+/* 侧栏 */
+.side-card{background:var(--c-panel);border:1px solid var(--line);border-radius:var(--r-card);padding:14px 15px;box-shadow:var(--sh)}
+.side-card h2{font-size:13px;letter-spacing:.14em;color:var(--t-3);font-family:var(--ff-s);font-weight:600;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.side-card ul{list-style:none;margin:0;padding:0;font-size:13.5px}
+.side-card li{padding:6px 0;border-bottom:1px dashed var(--line);line-height:1.6}
+.side-card li:last-child{border-bottom:0}
+.side-card li a{color:var(--t-1)}
+.side-card li a:hover{color:var(--c-primary-l)}
+.side-card li small{display:block;font-size:11.5px;color:var(--t-3);margin-top:1px}
+.side-card .num{font-variant-numeric:tabular-nums;color:var(--c-accent);font-weight:700;font-size:12.5px;margin-right:5px}
+.side-card p{font-size:13px;color:var(--t-2);line-height:1.8;margin:0}
+.side-note{font-size:12px;color:var(--t-3);line-height:1.75;background:var(--c-panel-2);border-radius:var(--r-btn);padding:10px 12px;margin-top:10px}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:20px;bottom:24px;width:44px;height:44px;border-radius:50%;
+  background:var(--c-primary);color:#fff;border:0;cursor:pointer;display:none;
+  align-items:center;justify-content:center;box-shadow:var(--sh-h);z-index:80;
+}
+.to-top.on{display:flex}
+.to-top svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2}
+
+/* 页脚 */
+.site-foot{background:var(--c-primary-d);color:#c3cbc6;margin-top:20px}
+.foot-in{max-width:var(--maxw);margin:0 auto;padding:40px 20px 26px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand .logo-txt{color:#fff;font-size:20px}
+.foot-brand .logo-sub{color:#8b968f}
+.foot-brand p{font-size:13.5px;line-height:1.85;color:#9aa8a1;margin:12px 0 0;max-width:36em}
+.foot-col h3{font-size:13px;letter-spacing:.14em;color:#8b968f;font-family:var(--ff-s);margin-bottom:10px;font-weight:600}
+.foot-col a{display:block;font-size:13.5px;color:#c3cbc6;padding:3px 0}
+.foot-col a:hover{color:#fff;text-decoration:none}
+.foot-bot{padding-top:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#7f8d86}
+.foot-bot p{margin:0}
+
+/* ============ 响应式 ============ */
+@media (max-width:1120px){
+  .layout{grid-template-columns:170px minmax(0,1fr);}
+  .col-right{grid-column:1/-1;position:static;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;}
+  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .comments{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contrib{grid-template-columns:1fr}
+}
+@media (max-width:1024px){
+  :root{--sticky-h:92px}
+  .search-box{display:none}
+  .hamb{display:flex}
+  .head-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:var(--c-panel);border-bottom:1px solid var(--line);padding:10px 16px;
+    box-shadow:var(--sh-h);flex-direction:column;gap:2px;
+  }
+  .head-nav.open{display:flex}
+  .head-nav a{padding:9px 12px;border-radius:8px}
+  .head-in{position:relative}
+  .hero .in{grid-template-columns:1fr;gap:26px;padding:38px 20px 34px}
+  .hero-visual{max-width:440px;margin:0 auto}
+  .layout{grid-template-columns:minmax(0,1fr);padding-top:24px}
+  .col-left{position:static}
+  .channel-nav{display:flex;gap:6px;overflow-x:auto;padding:8px;align-items:center}
+  .channel-nav h2{display:none}
+  .channel-nav ul{display:flex;gap:6px}
+  .channel-nav a{padding:7px 13px;white-space:nowrap;font-size:13.5px}
+  .channel-nav .cnt{display:none}
+  .channel-note{display:none}
+  .col-right{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:740px){
+  :root{--sticky-h:88px}
+  body{font-size:15.5px}
+  .announce .in{padding:6px 14px;gap:10px;font-size:12.5px}
+  .announce ul{gap:14px;flex-direction:column;gap:3px}
+  .head-in{padding:8px 14px;gap:12px}
+  .logo-txt{font-size:19px}
+  .head-tools .btn-ghost{display:none}
+  .layout{padding:18px 14px 48px;gap:24px}
+  .hero .in{padding:30px 14px 28px}
+  .hero h1{font-size:36px}
+  .hero-desc{font-size:15px}
+  .hero-stats{gap:18px}
+  .hero-stats b{font-size:20px}
+  .card-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .comments{grid-template-columns:1fr}
+  .col-right{grid-template-columns:1fr}
+  .news article{grid-template-columns:1fr}
+  .news img{width:100%;height:150px}
+  .up-row{grid-template-columns:1fr;gap:2px}
+  .deep{padding:18px 16px}
+  .overview{padding:18px 16px}
+  .sec{margin-bottom:30px}
+  .sec-head h2{font-size:20px}
+  .foot-top{grid-template-columns:1fr;gap:22px}
+  .to-top{right:14px;bottom:16px;width:42px;height:42px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  .card:hover{transform:none}
+}
+:focus-visible{outline:2px solid var(--c-accent);outline-offset:2px}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="announce">
+    <div class="in">
+      <span class="brand-mini">原千岁</span>
+      <span class="dot" aria-hidden="true"></span>
+      <ul>
+        <li><time datetime="2026-11-08">11月8日</time><b>《冬港来信》追加夜场 19:30</b></li>
+        <li><time datetime="2026-11-06">11月6日</time><b>舞台剧《潮汐错位》第二幕换景调整</b></li>
+        <li><span>新增</span><b>角色设定页 4 篇</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <header class="site-head">
+    <div class="head-in">
+      <a class="logo" href="/#top" aria-label="原千岁 首页">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#24403a"/>
+          <path d="M17 45V19h11.4c5.5 0 9.1 3.2 9.1 8.2 0 4.9-3.6 8.1-9.1 8.1h-5.1V45z" fill="#e8d9b0"/>
+          <circle cx="46" cy="26" r="6.2" fill="#c96b4a"/>
+          <path d="M40 45c2.4-6.4 6.2-9.6 11-9.6" stroke="#e8d9b0" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span>
+          <span class="logo-txt">原千岁</span>
+          <span class="logo-sub">STAGE &amp; SCREEN</span>
+        </span>
+      </a>
+
+      <nav class="head-nav" id="headNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选条目</a>
+        <a href="/#updates">演出动态</a>
+        <a href="/#cats">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">选看路径</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+
+      <div class="head-tools">
+        <div class="search-box">
+          <svg class="mag" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21" stroke-linecap="round"/></svg>
+          <input id="q" type="search" placeholder="搜条目 / 公演 / 角色" aria-label="站内搜索" autocomplete="off">
+          <div class="search-hint" id="hint" role="listbox" aria-label="搜索结果"></div>
+        </div>
+        <a class="btn-ghost" href="/#contrib">投稿</a>
+        <button class="hamb" id="hamb" aria-label="打开导航菜单" aria-expanded="false" aria-controls="headNav"><span></span></button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="in">
+      <div>
+        <span class="hero-kicker">舞台 · 影视 · 公演记录</span>
+        <h1>原千岁</h1>
+        <p class="hero-desc">汇集舞台剧、影视条目与公演日程：<b>《冬港来信》</b>夜场加演、<b>《潮汐错位》</b>二幕换景、<b>《长夜未明》</b>档案公开，附角色设定、场次时间与观众口碑，按作品形态与观看门槛整理。</p>
+        <div class="hero-actions">
+          <a class="btn-main" href="/#picks">看精选条目</a>
+          <a class="btn-line" href="/#updates">本月公演日程</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>38</b>收录条目</div>
+          <div><b>12</b>在演 / 待演场次</div>
+          <div><b>11-08</b>最近更新</div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 420 340" role="img">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e8d9b0" stop-opacity=".95"/>
+              <stop offset="1" stop-color="#c96b4a" stop-opacity=".55"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0" stop-color="#3a5f56"/>
+              <stop offset="1" stop-color="#24403a"/>
+            </linearGradient>
+          </defs>
+          <rect x="30" y="26" width="360" height="288" rx="18" fill="url(#g2)" stroke="#4d6f64" stroke-opacity=".7"/>
+          <path d="M30 214h360" stroke="#e8d9b0" stroke-opacity=".18"/>
+          <circle cx="150" cy="120" r="46" fill="url(#g1)"/>
+          <path d="M104 250c8-46 30-70 46-70s38 24 46 70" fill="#1a2b26" opacity=".55"/>
+          <path d="M258 78h84M258 98h62M258 118h74" stroke="#e8d9b0" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
+          <rect x="252" y="146" width="96" height="24" rx="12" fill="#c96b4a" opacity=".8"/>
+          <rect x="252" y="182" width="70" height="18" rx="9" fill="#e8d9b0" opacity=".35"/>
+          <g stroke="#e8d9b0" stroke-opacity=".2">
+            <path d="M56 266h120M56 282h84"/>
+          </g>
+          <circle cx="352" cy="266" r="16" fill="none" stroke="#e8d9b0" stroke-opacity=".5" stroke-width="2"/>
+          <path d="M345 266h14M352 259v14" stroke="#e8d9b0" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="cap">公演档案 · 剧照示意</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏主体 -->
+  <div class="layout">
+
+    <!-- 左频道栏 -->
+    <aside class="col-left" aria-label="频道索引">
+      <nav class="channel-nav" id="channelNav" aria-label="频道分类">
+        <h2>频道</h2>
+        <ul>
+          <li><a href="/#overview" class="current">全部条目 <span class="cnt">38</span></a></li>
+          <li><a href="/#picks">舞台剧 <span class="cnt">14</span></a></li>
+          <li><a href="/#picks">影视作品 <span class="cnt">9</span></a></li>
+          <li><a href="/#updates">公演日程 <span class="cnt">12</span></a></li>
+          <li><a href="/#deep">角色设定 <span class="cnt">7</span></a></li>
+          <li><a href="/#guide">观演指南 <span class="cnt">4</span></a></li>
+          <li><a href="/#news">幕后访谈 <span class="cnt">6</span></a></li>
+          <li><a href="/#contrib">观众投稿 <span class="cnt">21</span></a></li>
+        </ul>
+        <div class="channel-note">条目按作品形态与演出时间归档，公演页在加演或换景后 24 小时内同步。</div>
+      </nav>
+    </aside>
+
+    <!-- 主内容 -->
+    <div class="col-main">
+
+      <!-- 1 领域概览 -->
+      <section class="sec" id="overview">
+        <div class="sec-head"><h2>舞台与荧幕作品概览</h2><span class="tagline">写于 11 月 8 日</span></div>
+        <div class="overview">
+          <p class="lead">围绕<strong>原千岁</strong>这个名字能查到的内容，大致分三条线：舞台剧演出、影视条目、以及围绕角色展开的设定与访谈。三条线的产出节奏差别很大，混在一起看容易错判。</p>
+          <p>舞台剧这条线最密。<strong>《潮汐错位》</strong>自 10 月中旬起在东京某中剧场连演，一套双幕结构，第二幕靠机械换景完成时间跳转，11 月 6 日剧组调整了换景时长，从原来的 92 秒压到 70 秒左右，观众席能明显感到位移更急。同一档期还有<strong>《冬港来信》</strong>，原本只排日场，11 月 8 日追加了 19:30 夜场，票面标注为“追加公演 B 席”。</p>
+          <p>影视条目线更稀疏，但门槛不同。<strong>《长夜未明》</strong>属于慢节奏单元剧，单集 48 分钟，前 20 分钟几乎不交代人物关系，靠环境声和固定机位推进；<strong>《海雾之上》</strong>则相反，开场 6 分钟就把冲突抛出来，适合先看一集试水。两类作品的评价分歧点也不一样，前者集中在“节奏是否过慢”，后者集中在“收尾是否仓促”。</p>
+          <p>角色设定这条线常被忽略。舞台剧的角色小传与影视版并不共用，<strong>《潮汐错位》</strong>里的“灯塔看守人”在剧本初稿中是女性，定妆前改成男性并保留原台词中的两处称谓错位，这个细节在 10 月 29 日的排练手记里有记录。看设定页再回看正片，能对上不少埋点。</p>
+        </div>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section class="sec" id="picks">
+        <div class="sec-head">
+          <h2>精选条目</h2>
+          <span class="tagline">按形态与可看性挑出 9 条</span>
+          <a class="more" href="/#cats">按分类筛选 →</a>
+        </div>
+        <div class="card-grid">
+
+          <article class="card">
+            <div class="thumb"><span class="kind">舞台剧</span><img src="https://picsum.photos/seed/chaoxi1/400/300" width="400" height="300" loading="lazy" alt="《潮汐错位》双幕舞台场景示意"></div>
+            <div class="body">
+              <h3>《潮汐错位》双幕版</h3>
+              <div class="tags"><span>双幕结构</span><span>机械换景</span><span>中剧场</span></div>
+              <p class="desc">第二幕靠轨道换景完成十年时间跳转，11 月 6 日起换景压到 70 秒。看点在于换景期间演员仍在台上念白，声场会短暂失衡。</p>
+              <div class="meta"><span>热度 9.2</span><span class="score">4.6<small>/5</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><span class="kind">舞台剧</span><img src="https://picsum.photos/seed/donggang2/400/300" width="400" height="300" loading="lazy" alt="《冬港来信》夜场布景与灯光示意"></div>
+            <div class="body">
+              <h3>《冬港来信》追加夜场</h3>
+              <div class="tags"><span>书信体</span><span>夜场加演</span><span>小剧场</span></div>
+              <p class="desc">全剧 105 分钟无中场，靠六封信串起两代人。11 月 8 日追加 19:30 场，B 席视角偏侧，能看到侧幕换道具的全程。</p>
+              <div class="meta"><span>热度 8.7</span><span class="score">4.4<small>/5</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><span class="kind">影视</span><img src="https://picsum.photos/seed/changye3/400/300" width="400" height="300" loading="lazy" alt="《长夜未明》夜戏固定机位画面示意"></div>
+            <div class="body">
+              <h3>《长夜未明》单元剧</h3>
+              <div class="tags"><span>慢节奏</span><span>固定机位</span><span>单元结构</span></div>
+              <p class="desc">单集 48 分钟，前 20 分钟只给环境声。第三集把全部对白集中在最后 9 分钟，前段靠脚步声和门轴声建立空间。</p>
+              <div class="meta"><span>热度 8.1</span><span class="score">4.2<small>/5</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><span class="kind">影视</span><img src="https://picsum.photos/seed/haiwu4/400/300" width="400" height="300" loading="lazy" alt="《海雾之上》海面与雾中船舷画面示意"></div>
+            <div class="body">
+              <h3>《海雾之上》六集短剧</h3>
+              <div class="tags"><span>快开场</span><span>海上封闭空间</span><span>群像</span></div>
+              <p class="desc">开场 6 分钟抛出失踪案，第 2 集起每集换一个叙述者。争议最大的是第 5 集，把前四集的证词全部推翻重排。</p>
+              <div class="meta"><span>热度 7.9</span><span class="score">4.0<small>/5</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><span class="kind">角色设定</span><img src="https://picsum.photos/seed/dengta5/400/300" width="400" height="300" loading="lazy" alt="灯塔看守人角色设定稿示意"></div>
+            <div class="body">
+              <h3>灯塔看守人 · 设定稿</h3>
+              <div class="tags"><span>初稿对比</span><span>称谓错位</span><span>排练手记</span></div>
+              <p class="desc">初稿为女性角色，定妆前改为男性，保留两处称谓错位。10 月 29 日排练手记记录了改动当天的走位调整。</p>
+              <div class="meta"><span>更新 11-01</span><span class="score">—</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><span class="kind">访谈</span><img src="https://picsum.photos/seed/fangtan6/400/300" width="400" height="300" loading="lazy" alt="排练厅访谈现场示意"></div>
+            <div class="body">
+              <h3>排练厅访谈 · 换景那两天</h3>
+              <div class="tags"><span>幕后</span><span>换景</span><span>时间表</span></div>
+              <p class="desc">舞台监督讲了两天里改的三版调度：第一版换景 92 秒，第二版 78 秒，最终 70 秒。压缩靠的是取消一次道具回收。</p>
+              <div class="meta"><span>更新 11-06</span><span class="score">—</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><span class="kind">舞台剧</span><img src="https://picsum.photos/seed/duanzhang7/400/300" width="400" height="300" loading="lazy" alt="《断章三则》三段式舞台分区示意"></div>
+            <div class="body">
+              <h3>《断章三则》三幕拼演</h3>
+              <div class="tags"><span>三段结构</span><span>换角</span><span>朗读会形式</span></div>
+              <p class="desc">三幕由不同班底演，第三幕 11 月起换角。朗读会形式，演员持本上台，灯光只打半场，票价因此低于同档期。</p>
+              <div class="meta"><span>热度 7.4</span><span class="score">3.9<small>/5</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><span class="kind">影视</span><img src="https://picsum.photos/seed/qiaoshang8/400/300" width="400" height="300" loading="lazy" alt="《桥上风大》桥面长镜头画面示意"></div>
+            <div class="body">
+              <h3>《桥上风大》单集短片</h3>
+              <div class="tags"><span>长镜头</span><span>单场景</span><span>28 分钟</span></div>
+              <p class="desc">28 分钟一镜到底，机位在桥面来回三次。第 17 分钟有一处明显的收音断点，导演在映后谈里承认是现场风噪。</p>
+              <div class="meta"><span>热度 6.8</span><span class="score">3.8<small>/5</small></span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><span class="kind">公演档案</span><img src="https://picsum.photos/seed/gongyan9/400/300" width="400" height="300" loading="lazy" alt="10 月至 11 月公演场次排期表示意"></div>
+            <div class="body">
+              <h3>10—11 月场次总表</h3>
+              <div class="tags"><span>排期</span><span>加演</span><span>换景版本</span></div>
+              <p class="desc">把三部舞台剧的 12 场排期合并成一张表，标出加演场与换景调整后的场次，方便对照同一天能不能连看两场。</p>
+              <div class="meta"><span>更新 11-08</span><span class="score">—</span></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="sec" id="updates">
+        <div class="sec-head"><h2>演出与条目动态</h2><span class="tagline">11 月 1 日 — 11 月 8 日</span></div>
+        <div class="updates">
+          <ul>
+            <li class="up-row"><time datetime="2026-11-08">11-08 09:20</time><span><b>《冬港来信》</b>追加 19:30 夜场，B 席 42 个座位开放，票面标注“追加公演”。</span></li>
+            <li class="up-row"><time datetime="2026-11-07">11-07 21:40</time><span><b>《海雾之上》</b>第 5 集重排证词的段落被剪成短视频，单条转发量破万，讨论集中在时间线是否自洽。</span></li>
+            <li class="up-row"><time datetime="2026-11-06">11-06 16:05</time><span><b>《潮汐错位》</b>第二幕换景由 78 秒压至 70 秒，取消一次道具回收，当晚场次开始执行。</span></li>
+            <li class="up-row"><time datetime="2026-11-05">11-05 11:30</time><span><b>《断章三则》</b>第三幕更换演员，11 月 5 日起的场次由新卡司出演，持旧票可换场。</span></li>
+            <li class="up-row"><time datetime="2026-11-04">11-04 19:15</time><span><b>《长夜未明》</b>第三集上线幕后音轨版，去掉配乐只保留环境声，时长仍为 48 分钟。</span></li>
+            <li class="up-row"><time datetime="2026-11-03">11-03 14:50</time><span><b>灯塔看守人</b>设定页补入初稿台词对照，标出两处称谓错位的位置。</span></li>
+            <li class="up-row"><time datetime="2026-11-02">11-02 10:10</time><span><b>《桥上风大》</b>映后谈实录整理完成，导演说明第 17 分钟收音断点来自现场风噪。</span></li>
+            <li class="up-row"><time datetime="2026-11-01">11-01 20:00</time><span><b>排练厅访谈</b>发布，舞台监督列出换景三版调度的时间差。</span></li>
+            <li class="up-row"><time datetime="2026-10-31">10-31 17:25</time><span><b>《潮汐错位》</b>10 月场次收官，官方公布 11 月前两周排期共 9 场。</span></li>
+            <li class="up-row"><time datetime="2026-10-30">10-30 12:40</time><span><b>《冬港来信》</b>日场票售罄，候补名单登记至 11 月 2 日截止。</span></li>
+            <li class="up-row"><time datetime="2026-10-29">10-29 22:05</time><span><b>角色设定</b>排练手记更新，记录灯塔看守人改性别当天的走位调整。</span></li>
+            <li class="up-row"><time datetime="2026-10-28">10-28 09:00</time><span><b>场次总表</b>初版上线，合并三部舞台剧的 12 场排期。</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4 分类入口 + 筛选 -->
+      <section class="sec" id="cats">
+        <div class="sec-head"><h2>按内容类型筛选</h2><span class="tagline">点分类可过滤下方条目</span></div>
+        <div class="filter-bar">
+          <span>当前：<b id="curCat">全部</b></span>
+          <button class="reset" id="resetCat" type="button">清除筛选</button>
+        </div>
+        <div class="cat-grid" id="catGrid">
+          <button class="cat on" type="button" data-cat="全部"><b>全部条目</b><small>38 条，含舞台剧、影视、设定与访谈</small></button>
+          <button class="cat" type="button" data-cat="舞台剧"><b>舞台剧</b><small>双幕、书信体、朗读会三类形态</small></button>
+          <button class="cat" type="button" data-cat="影视"><b>影视作品</b><small>单元剧、短剧、单集短片</small></button>
+          <button class="cat" type="button" data-cat="角色设定"><b>角色设定</b><small>初稿对比与称谓改动记录</small></button>
+          <button class="cat" type="button" data-cat="公演档案"><b>公演档案</b><small>场次排期、加演与换景版本</small></button>
+          <button class="cat" type="button" data-cat="访谈"><b>幕后访谈</b><small>舞台监督、导演映后谈实录</small></button>
+          <button class="cat" type="button" data-cat="互动"><b>观众投稿</b><small>观后感、场次笔记、选座经验</small></button>
+          <button class="cat" type="button" data-cat="舞台剧"><b>朗读会</b><small>持本上台的演出形式，票价偏低</small></button>
+        </div>
+        <div class="filter-result" id="filterResult" aria-live="polite"></div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="sec" id="deep">
+        <div class="sec-head"><h2>三类舞台形态的时间成本对比</h2><span class="tagline">深度解析</span></div>
+        <div class="deep">
+          <p>把《潮汐错位》《冬港来信》《断章三则》放在一起看，最先要算的不是票价，是时间。三部戏的单场时长分别是 142 分钟、105 分钟、96 分钟，但真正占掉一个晚上的部分比时长本身更复杂。</p>
+
+          <h3>双幕结构的中场，决定了一晚能不能连看</h3>
+          <p>《潮汐错位》有 15 分钟中场，听起来不长，但散场动线绕到场馆外侧，从出口到再入场要穿过一段露天通道。11 月 3 日那场实测，中场开始到重新落座用了 21 分钟。这意味着如果当晚还想赶第二场，两场之间至少要留 40 分钟缓冲。</p>
+          <p>《冬港来信》干脆没有中场，105 分钟一口气演完，散场时间比《潮汐错位》早 37 分钟。对通勤距离超过 40 分钟的观众，这个差别比票价更实际。把它拆成可核对的环节：</p>
+          <ul>
+            <li><b>入场排队</b>：小剧场两个检票口，开演前 20 分钟起排队，实测 6—9 分钟。</li>
+            <li><b>中场位移</b>：《潮汐错位》15 分钟中场，实际可用 9 分钟，其余耗在通道。</li>
+            <li><b>散场出口</b>：《冬港来信》单出口，105 分钟场次散场约 5 分钟走完。</li>
+          </ul>
+
+          <h3>换景速度压缩，观众感知到的不是“快”而是“稳”</h3>
+          <p>11 月 6 日的调整把第二幕换景从 78 秒压到 70 秒，官方说法是取消一次道具回收。舞台监督在 11 月 1 日的访谈里给了三版调度：92 秒、78 秒、70 秒，每版都对应一次具体动作的删减。</p>
+          <p>从观众席看，70 秒版本的问题不在快，而在换景期间演员仍在念白。道具回收的手推车经过台口时，台词会被金属声盖掉半句。11 月 6 日晚场有观众在散场后提到“第二幕开头两句没听清”，这个反馈与调度表上的动作位置是对得上的——手推车正好经过演员站位右前方 1.5 米处。</p>
+          <div class="pull">换景压缩带来的是可听度下降，不是节奏变快。判断一场值不值得看，先看这场的换景版本标注。</div>
+
+          <h3>朗读会的低票价，对应的是另一种观看方式</h3>
+          <p>《断章三则》第三幕是朗读会形式，演员持本上台，灯光只打半场。票价低于同档期约 35%，代价是看不到完整走位，动作提示靠演员自己念出来。11 月 5 日换角后，新卡司第一场把两处舞台指示念得比前一场重，反而让剧本结构更清楚。</p>
+          <table>
+            <thead><tr><th>作品</th><th>单场时长</th><th>中场</th><th>换景 / 形式标注</th><th>适合的观看状态</th></tr></thead>
+            <tbody>
+              <tr><td>《潮汐错位》</td><td>142 分钟</td><td>15 分钟</td><td>70 秒换景（11-06 起）</td><td>整晚空出，能接受声音遮挡</td></tr>
+              <tr><td>《冬港来信》</td><td>105 分钟</td><td>无</td><td>书信体，无机械换景</td><td>通勤较远，想早散场</td></tr>
+              <tr><td>《断章三则》</td><td>96 分钟</td><td>无</td><td>朗读会，持本上台</td><td>预算有限，重文本轻走位</td></tr>
+            </tbody>
+          </table>
+          <p>三类形态没有高下，差别在于你愿意把注意力放在哪。想看清身体调度，选《潮汐错位》的完整走位场；想听懂文本，朗读会的念白密度更高；只想在一个晚上把故事走完，《冬港来信》的无中场结构最省事。</p>
+        </div>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section class="sec" id="guide">
+        <div class="sec-head"><h2>第一次看，按这个顺序</h2><span class="tagline">观看路径</span></div>
+        <div class="steps">
+          <div class="step"><b>先用一集试水，别从最长的那部开始</b><span>《海雾之上》第 1 集 6 分钟抛出冲突，看完能判断是否接受它的群像叙述；《长夜未明》前 20 分钟几乎无对白，用作试水容易误判。</span></div>
+          <div class="step"><b>看舞台剧前先确认这场的换景版本</b><span>《潮汐错位》11 月 6 日前后是两套调度，票面与场次总表都会标版本。想听清第二幕开头，选 70 秒版本之外的场次，或坐靠中间偏左的位置。</span></div>
+          <div class="step"><b>把角色设定页当预习，不当剧透</b><span>灯塔看守人的称谓错位在正片里只出现两次，先看设定页能对上，但会削弱第一次的意外感。介意的话看完再读。</span></div>
+          <div class="step"><b>连看两场，中间至少留 40 分钟</b><span>《潮汐错位》中场实际可用只有 9 分钟，加上散场与再入场，两场之间留 40 分钟是下限，跨场馆还要再加通勤时间。</span></div>
+          <div class="step"><b>预算有限，朗读会与单集短片先排上</b><span>《断章三则》朗读会票价低约 35%，《桥上风大》只有 28 分钟，两者加起来不到一场双幕剧的时间，适合先建立对文本风格的判断。</span></div>
+        </div>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="sec" id="faq">
+        <div class="sec-head"><h2>常被问到的问题</h2><span class="tagline">6 条</span></div>
+        <div class="faq">
+          <details>
+            <summary>《潮汐错位》第二幕换景改短后，哪几句台词容易听不清？</summary>
+            <div class="ans">第二幕开场约第 40 秒到 55 秒，演员站在台口右前方念白，手推车从同一侧经过。11 月 6 日晚场反馈里被提到的是开头两句关于潮位数字的台词。坐中间偏左的位置受影响较小。</div>
+          </details>
+          <details>
+            <summary>《冬港来信》追加的夜场和日场内容一样吗？</summary>
+            <div class="ans">剧本相同，105 分钟无中场。差别在席位：追加夜场开放的是 B 席 42 个座位，视角偏侧，能看到侧幕换道具的全程。想看清正面调度，日场 A 席更合适。</div>
+          </details>
+          <details>
+            <summary>《长夜未明》第三集的环境声音轨版，和原版差在哪？</summary>
+            <div class="ans">去掉配乐，只保留脚步声、门轴声与室外环境声，时长仍是 48 分钟。对白位置没有变，但前 20 分钟的信息量更依赖声音方位，戴耳机看比外放更容易分辨空间关系。</div>
+          </details>
+          <details>
+            <summary>《断章三则》第三幕换角后，持旧票怎么处理？</summary>
+            <div class="ans">11 月 5 日起的场次由新卡司出演，持旧票可在票面场次前换至同档期其他场，或按原渠道退票。朗读会形式不变，演员仍持本上台。</div>
+          </details>
+          <details>
+            <summary>灯塔看守人在初稿里是女性，改动后保留了哪些细节？</summary>
+            <div class="ans">两处称谓错位原样保留，分别在第二幕中段与尾声。10 月 29 日的排练手记记录了改动当天的走位调整，主要是台口站位向左移了约 1 米，避免与机械换景轨道重叠。</div>
+          </details>
+          <details>
+            <summary>《桥上风大》第 17 分钟的收音断点，是录制问题吗？</summary>
+            <div class="ans">导演在映后谈里说明是现场风噪，不是后期失误。长镜头在桥面来回三次，第 17 分钟正好是第二次折返，机位迎风，收声设备被风压影响约 4 秒。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8 评论 -->
+      <section class="sec" id="comments">
+        <div class="sec-head"><h2>观众怎么说</h2><span class="tagline">16 条，含中性评价</span></div>
+        <div class="comments">
+          <div class="cmt"><div class="who"><span class="avatar">青</span><span class="name">青木川</span><span class="when">11-08</span></div><p>夜场 B 席确实偏，但侧幕换道具看得一清二楚，比正席有意思。</p><span class="obj">《冬港来信》</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">海</span><span class="name">海雾观察</span><span class="when">11-07</span></div><p>第 5 集把前面证词全推翻，重看了一遍才理清谁在什么时候说了什么。这种排法有点冒险。</p><span class="obj">《海雾之上》</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">灯</span><span class="name">灯塔下的人</span><span class="when">11-07</span></div><p>称谓错位那两处我第一遍完全没注意，看完设定页回去重看才找到。</p><span class="obj">灯塔看守人设定</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">潮</span><span class="name">潮位 3.2</span><span class="when">11-06</span></div><p>70 秒那版开头两句真没听清，手推车声音盖过去了。调度表上写的位置和实际能对上。</p><span class="obj">《潮汐错位》</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">长</span><span class="name">长夜第三集</span><span class="when">11-06</span></div><p>环境声版戴耳机看，门轴声的方向感比原版强。配乐一去掉反而更紧张。</p><span class="obj">《长夜未明》</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">断</span><span class="name">断章收集者</span><span class="when">11-05</span></div><p>新卡司第一场把舞台指示念得特别重，听得出结构，但有点出戏。</p><span class="obj">《断章三则》</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">桥</span><span class="name">桥面风大</span><span class="when">11-05</span></div><p>28 分钟一镜到底，第 17 分钟那 4 秒风噪我以为是设备坏了。</p><span class="obj">《桥上风大》</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">排</span><span class="name">排期表读者</span><span class="when">11-04</span></div><p>场次总表把加演和换景版本标出来，比一张一张翻票务页省事。</p><span class="obj">场次总表</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">冬</span><span class="name">冬港常客</span><span class="when">11-04</span></div><p>无中场 105 分钟，散场早，对我这种要赶末班车的人很友好。</p><span class="obj">《冬港来信》</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">换</span><span class="name">换景观察员</span><span class="when">11-03</span></div><p>中场 15 分钟实际只有 9 分钟能坐下，通道那段露天真冷。</p><span class="obj">《潮汐错位》</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">读</span><span class="name">朗读会常驻</span><span class="when">11-03</span></div><p>票价低 35% 是有原因的，走位基本看不到，全靠听。</p><span class="obj">朗读会</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">手</span><span class="name">手记读者</span><span class="when">11-02</span></div><p>排练手记里台口左移 1 米那段，回看正片能看出站位确实偏左。</p><span class="obj">排练手记</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">映</span><span class="name">映后谈听众</span><span class="when">11-02</span></div><p>导演承认风噪那段挺坦诚，比硬说是艺术处理强。</p><span class="obj">《桥上风大》映后谈</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">卡</span><span class="name">卡司变动记</span><span class="when">11-01</span></div><p>换角第一场总归有点不稳，但台词没出错，已经比预期好。</p><span class="obj">《断章三则》第三幕</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">候</span><span class="name">候补名单 47</span><span class="when">10-31</span></div><p>日场候补排到 47 号，最后没进去，下次还是直接抢夜场。</p><span class="obj">《冬港来信》日场</span></div>
+          <div class="cmt"><div class="who"><span class="avatar">路</span><span class="name">路过看看</span><span class="when">10-30</span></div><p>对舞台剧不太熟，先看了短片，28 分钟不算太累。</p><span class="obj">《桥上风大》</span></div>
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="sec" id="news">
+        <div class="sec-head"><h2>近期资讯</h2><span class="tagline">10 月 28 日 — 11 月 8 日</span></div>
+        <div class="news">
+          <article>
+            <img src="https://picsum.photos/seed/news-yechang/600/400" width="600" height="400" loading="lazy" alt="《冬港来信》夜场票务公告界面示意">
+            <div>
+              <time datetime="2026-11-08">2026-11-08</time>
+              <h3>《冬港来信》追加夜场开票，B 席 42 座</h3>
+              <p>追加场定于 11 月 8 日 19:30，票面标注“追加公演”，不开放在线选座，按购票顺序分配。剧组同时确认日场候补名单已于 11 月 2 日截止登记。</p>
+            </div>
+          </article>
+          <article>
+            <img src="https://picsum.photos/seed/news-huanjing/600/400" width="600" height="400" loading="lazy" alt="《潮汐错位》舞台换景轨道与手推车示意">
+            <div>
+              <time datetime="2026-11-06">2026-11-06</time>
+              <h3>《潮汐错位》换景压至 70 秒，取消一次道具回收</h3>
+              <p>舞台监督确认第三版调度当晚执行，第二幕开头的手推车经过台口时间提前约 8 秒。剧组表示会根据前五场反馈决定是否再调。</p>
+            </div>
+          </article>
+          <article>
+            <img src="https://picsum.photos/seed/news-huanjiao/600/400" width="600" height="400" loading="lazy" alt="《断章三则》第三幕新卡司排练照示意">
+            <div>
+              <time datetime="2026-11-05">2026-11-05</time>
+              <h3>《断章三则》第三幕换角，旧票可换场</h3>
+              <p>11 月 5 日起的场次由新卡司出演。票务方开放换场通道，限同档期其他场次，退票按原渠道处理，截止日期为 11 月 12 日。</p>
+            </div>
+          </article>
+          <article>
+            <img src="https://picsum.photos/seed/news-yingui/600/400" width="600" height="400" loading="lazy" alt="《长夜未明》第三集环境声音轨制作界面示意">
+            <div>
+              <time datetime="2026-11-04">2026-11-04</time>
+              <h3>《长夜未明》第三集上线环境声音轨版</h3>
+              <p>去掉配乐，仅保留现场环境声，时长维持 48 分钟。制作方说明该版本为单独母版，不对原版做替换，两版可并行观看。</p>
+            </div>
+          </article>
+          <article>
+            <img src="https://picsum.photos/seed/news-sheding/600/400" width="600" height="400" loading="lazy" alt="灯塔看守人初稿台词对照页面示意">
+            <div>
+              <time datetime="2026-11-03">2026-11-03</time>
+              <h3>灯塔看守人设定页补入初稿台词对照</h3>
+              <p>新增两处称谓错位的原文标注，位置在第二幕中段与尾声。设定页同时附上 10 月 29 日排练手记中台口左移 1 米的记录。</p>
+            </div>
+          </article>
+          <article>
+            <img src="https://picsum.photos/seed/news-yinghou/600/400" width="600" height="400" loading="lazy" alt="《桥上风大》映后谈现场示意">
+            <div>
+              <time datetime="2026-11-02">2026-11-02</time>
+              <h3>《桥上风大》映后谈实录：第 17 分钟是风噪</h3>
+              <p>导演说明长镜头在桥面第二次折返时迎风，收声设备受影响约 4 秒。实录全文已在映后谈整理页公开，附现场录音片段。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="sec" id="rel">
+        <div class="sec-head"><h2>顺着这些方向找</h2><span class="tagline">具体条目与类型词</span></div>
+        <div class="rel">
+          <a href="/#picks">双幕结构舞台剧 <i>14 条</i></a>
+          <a href="/#picks">书信体小剧场 <i>5 条</i></a>
+          <a href="/#picks">慢节奏单元剧 <i>6 条</i></a>
+          <a href="/#picks">海上封闭空间群像 <i>3 条</i></a>
+          <a href="/#deep">换景时间对比 <i>解析</i></a>
+          <a href="/#guide">连看两场排期 <i>指南</i></a>
+          <a href="/#picks">朗读会低票价场 <i>4 条</i></a>
+          <a href="/#picks">单集短片 30 分钟内 <i>7 条</i></a>
+        </div>
+      </section>
+
+      <!-- 11 榜单 -->
+      <section class="sec" id="rank">
+        <div class="sec-head"><h2>本月条目热度榜</h2><span class="tagline">按 10 月 9 日 — 11 月 8 日讨论量</span></div>
+        <div class="rank">
+          <ol>
+            <li><span><b>《海雾之上》第 5 集证词重排</b><small>单条短视频转发破万，时间线讨论集中在 11-07</small></span><em>9.4</em></li>
+            <li><span><b>《潮汐错位》70 秒换景</b><small>11-06 执行，前五场反馈决定是否再调</small></span><em>9.2</em></li>
+            <li><span><b>《冬港来信》夜场加演</b><small>11-08 开票，B 席 42 座不开放选座</small></span><em>8.7</em></li>
+            <li><span><b>《长夜未明》环境声音轨版</b><small>11-04 上线，与正片并行</small></span><em>8.1</em></li>
+            <li><span><b>灯塔看守人初稿对照</b><small>11-03 补入两处称谓错位</small></span><em>7.6</em></li>
+            <li><span><b>《断章三则》第三幕换角</b><small>11-05 起新卡司，换场截止 11-12</small></span><em>7.4</em></li>
+            <li><span><b>《桥上风大》风噪说明</b><small>11-02 映后谈实录公开</small></span><em>6.8</em></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 12 补充：时间线 -->
+      <section class="sec" id="timeline">
+        <div class="sec-head"><h2>一条条目的时间线</h2><span class="tagline">《潮汐错位》10 月 — 11 月</span></div>
+        <div class="timeline">
+          <ul>
+            <li><time datetime="2026-10-16">10-16</time><b>首演场</b><span>第二幕换景 92 秒，第一版调度，道具回收两次。</span></li>
+            <li><time datetime="2026-10-23">10-23</time><b>第二版调度</b><span>换景压到 78 秒，取消一次站位调整，走位微调。</span></li>
+            <li><time datetime="2026-10-29">10-29</time><b>设定改动</b><span>灯塔看守人台口左移约 1 米，避开换景轨道。</span></li>
+            <li><time datetime="2026-10-31">10-31</time><b>10 月收官</b><span>公布 11 月前两周排期，共 9 场。</span></li>
+            <li><time datetime="2026-11-01">11-01</time><b>舞台监督访谈</b><span>列出三版调度的时间差与动作删减。</span></li>
+            <li><time datetime="2026-11-06">11-06</time><b>第三版调度</b><span>换景 70 秒，当晚场次起执行。</span></li>
+            <li><time datetime="2026-11-08">11-08</time><b>场次总表更新</b><span>合并三部舞台剧 12 场，标注换景版本。</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 13 投稿互动 -->
+      <section class="sec" id="contrib">
+        <div class="sec-head"><h2>投稿与交流</h2><span class="tagline">观众场次笔记长期征集</span></div>
+        <div class="contrib">
+          <div class="panel">
+            <h3>投一篇场次笔记</h3>
+            <p>欢迎写具体的东西：哪一场、坐哪个区、哪句台词被盖掉、换景时看到什么。带场次时间与座位区的笔记会优先整理进场次总表。</p>
+            <ul>
+              <li>字数不限，300 字以上更容易被采纳</li>
+              <li>请注明场次日期与票面区域，方便核对版本</li>
+              <li>涉及卡司变动的场次，写清是否为换角后首场</li>
+              <li>不接受未观看场次的转述稿</li>
+            </ul>
+            <a class="mini-btn" href="/#contrib">提交笔记</a>
+          </div>
+          <div class="panel">
+            <h3>本月交流话题</h3>
+            <p>11 月的讨论集中在两件事：换景压缩后第二幕开头的可听度，以及《海雾之上》第 5 集重排证词是否自洽。</p>
+            <ul>
+              <li>话题一：70 秒换景，你坐哪个区听得最清楚</li>
+              <li>话题二：第 5 集的时间线，重看能否对上</li>
+              <li>话题三：朗读会持本上台，你能接受吗</li>
+            </ul>
+            <a class="mini-btn" href="/#comments">看观众评论</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="col-right" aria-label="辅助信息">
+      <div class="side-card">
+        <h2>本周更新</h2>
+        <ul>
+          <li><a href="/#updates">《冬港来信》夜场加演</a><small>11-08 · 19:30 追加场</small></li>
+          <li><a href="/#deep">换景 70 秒版本说明</a><small>11-06 · 三版调度对比</small></li>
+          <li><a href="/#news">环境声音轨版上线</a><small>11-04 · 第三集</small></li>
+          <li><a href="/#picks">灯塔看守人设定页</a><small>11-03 · 两处称谓错位</small></li>
+          <li><a href="/#timeline">《潮汐错位》时间线</a><small>11-08 · 补入 10 月节点</small></li>
+        </ul>
+      </div>
+
+      <div class="side-card">
+        <h2>本月场次速览</h2>
+        <ul>
+          <li><span class="num">9</span><a href="/#updates">《潮汐错位》11 月前两周</a><small>142 分钟 · 含 15 分钟中场</small></li>
+          <li><span class="num">3</span><a href="/#updates">《冬港来信》含追加夜场</a><small>105 分钟 · 无中场</small></li>
+          <li><span class="num">5</span><a href="/#updates">《断章三则》朗读会</a><small>96 分钟 · 持本上台</small></li>
+        </ul>
+        <div class="side-note">换景版本以场次总表标注为准，11 月 6 日前后分属两套调度。</div>
+      </div>
+
+      <div class="side-card">
+        <h2>角色设定索引</h2>
+        <ul>
+          <li><a href="/#picks">灯塔看守人</a><small>初稿女性 → 定稿男性，保留两处称谓错位</small></li>
+          <li><a href="/#picks">港务员 · 第二幕</a><small>台词量 11 句，全部为电话应答</small></li>
+          <li><a href="/#picks">写信人 A / B</a><small>六封信的两位叙述者，共用同一段独白</small></li>
+          <li><a href="/#picks">桥面行人</a><small>单集短片，无姓名，出场 28 分钟</small></li>
+        </ul>
+      </div>
+
+      <div class="side-card">
+        <h2>口碑要点</h2>
+        <p>争议集中在两处：换景压缩后第二幕开头的可听度；《海雾之上》第 5 集推翻前四集证词后，时间线是否仍然自洽。前者的反馈有场次与座位区可核对，后者多为主观判断。</p>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<footer class="site-foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="logo-txt">原千岁</span>
+        <span class="logo-sub">STAGE &amp; SCREEN</span>
+        <p>覆盖 2026 年 10 月至 11 月的舞台剧与影视条目，含 12 场在演 / 待演场次、7 篇角色设定与 6 条幕后访谈；公演页在加演、换角、换景调整后 24 小时内同步，场次总表逐场核对版本。</p>
+      </div>
+      <div class="foot-col">
+        <h3>内容</h3>
+        <a href="/#picks">精选条目</a>
+        <a href="/#updates">演出动态</a>
+        <a href="/#timeline">条目时间线</a>
+        <a href="/#rank">热度榜</a>
+      </div>
+      <div class="foot-col">
+        <h3>查阅</h3>
+        <a href="/#overview">领域概览</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">选看路径</a>
+        <a href="/#faq">常见问答</a>
+      </div>
+      <div class="foot-col">
+        <h3>参与</h3>
+        <a href="/#contrib">投稿笔记</a>
+        <a href="/#comments">观众评论</a>
+        <a href="/#news">近期资讯</a>
+        <a href="/#cats">分类入口</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p>条目名称、场次与评分为示例内容，用于展示聚合结构；不构成票务或演出承诺。</p>
+      <p>最近核对：2026-11-08 · 对应《冬港来信》夜场加演与场次总表更新</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端菜单 */
+  var hamb=document.getElementById('hamb');
+  var nav=document.getElementById('headNav');
+  if(hamb&&nav){
+    hamb.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      hamb.setAttribute('aria-expanded',open?'true':'false');
+      hamb.setAttribute('aria-label',open?'关闭导航菜单':'打开导航菜单');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'){
+        nav.classList.remove('open');
+        hamb.setAttribute('aria-expanded','false');
+        hamb.setAttribute('aria-label','打开导航菜单');
+      }
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&nav.classList.contains('open')){
+        nav.classList.remove('open');
+        hamb.setAttribute('aria-expanded','false');
+        hamb.focus();
+      }
+    });
+  }
+
+  /* 回到顶部 */
+  var toTop=document.getElementById('toTop');
+  function onScroll(){
+    if(window.scrollY>window.innerHeight*0.9){toTop.classList.add('on');}
+    else{toTop.classList.remove('on');}
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  /* 分类筛选：作用于精选卡片 */
+  var catGrid=document.getElementById('catGrid');
+  var filterResult=document.getElementById('filterResult');
+  var curCat=document.getElementById('curCat');
+  var resetCat=document.getElementById('resetCat');
+  var cards=Array.prototype.slice.call(document.querySelectorAll('#picks .card'));
+
+  function cardCat(card){
+    var kind=card.querySelector('.kind');
+    return kind?kind.textContent.trim():'';
+  }
+  function applyFilter(cat){
+    var shown=0;
+    cards.forEach(function(c){
+      var k=cardCat(c);
+      var match=(cat==='全部')||(cat==='互动'?false:(cat==='舞台剧'? (k==='舞台剧'):(k===cat)));
+      c.style.display=match?'':'none';
+      if(match)shown++;
+    });
+    curCat.textContent=cat;
+    Array.prototype.forEach.call(catGrid.querySelectorAll('.cat'),function(b){
+      b.classList.toggle('on',b.getAttribute('data-cat')===cat);
+    });
+    if(shown===0){
+      filterResult.innerHTML='<div class="empty">该分类下暂无匹配条目。当前精选卡覆盖舞台剧、影视、角色设定、访谈与公演档案，可点“清除筛选”查看全部。</div>';
+    }else{
+      filterResult.textContent='已显示 '+shown+' 条「'+cat+'」相关条目。';
+    }
+  }
+  if(catGrid){
+    catGrid.addEventListener('click',function(e){
+      var btn=e.target.closest('.cat');
+      if(!btn)return;
+      applyFilter(btn.getAttribute('data-cat'));
+    });
+    resetCat.addEventListener('click',function(){applyFilter('全部');});
+    filterResult.textContent='已显示 '+cards.length+' 条全部条目。';
+  }
+
+  /* 搜索：本地可见内容查找 */
+  var q=document.getElementById('q');
+  var hint=document.getElementById('hint');
+  var index=[];
+  document.querySelectorAll('.card h3, .updates b, .news h3, .rel a, .rank b, .timeline b, .side-card a, .cat b, .faq summary').forEach(function(el){
+    var txt=el.textContent.replace(/\s+/g,' ').trim();
+    if(txt&&txt.length>1){
+      var target=el.closest('section, .side-card');
+      var id=target&&target.id?target.id:'top';
+      index.push({t:txt,id:id});
+    }
+  });
+  // 去重
+  var seen={};
+  index=index.filter(function(o){
+    var k=o.t+'|'+o.id;
+    if(seen[k])return false;seen[k]=1;return true;
+  });
+
+  function doSearch(){
+    var v=q.value.trim();
+    if(!v){hint.classList.remove('on');hint.innerHTML='';return;}
+    var res=index.filter(function(o){return o.t.indexOf(v)>-1;}).slice(0,8);
+    if(res.length===0){
+      hint.innerHTML='<div class="none">没有匹配“'+v.replace(/</g,'&lt;')+'”的条目，换个作品名或类型词试试。</div>';
+    }else{
+      hint.innerHTML=res.map(function(o){
+        return '<a href="/#'+o.id+'">'+o.t.replace(/</g,'&lt;')+'</a>';
+      }).join('');
+    }
+    hint.classList.add('on');
+  }
+  if(q){
+    q.addEventListener('input',doSearch);
+    q.addEventListener('focus',function(){if(q.value.trim())doSearch();});
+    document.addEventListener('click',function(e){
+      if(!e.target.closest('.search-box'))hint.classList.remove('on');
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'){hint.classList.remove('on');}
+    });
+    hint.addEventListener('click',function(e){
+      if(e.target.tagName==='A'){hint.classList.remove('on');q.value='';}
+    });
+  }
+
+  /* 频道导航高亮 */
+  var secs=Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  var chLinks=Array.prototype.slice.call(document.querySelectorAll('#channelNav a'));
+  if(secs.length&&chLinks.length){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var id=en.target.id;
+          chLinks.forEach(function(a){
+            a.classList.toggle('current',a.getAttribute('href')==='/'+'#'+id);
+          });
+        }
+      });
+    },{rootMargin:'-96px 0px -60% 0px',threshold:0});
+    secs.forEach(function(s){obs.observe(s);});
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"原千岁",
+  "description":"原千岁作品与演出资料聚合，收录舞台剧、影视条目、公演日程与观众口碑。",
+  "inLanguage":"zh-CN",
+  "about":["舞台剧","影视作品","公演日程","角色设定"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"《潮汐错位》第二幕换景改短后，哪几句台词容易听不清？","acceptedAnswer":{"@type":"Answer","text":"第二幕开场约第 40 秒到 55 秒，演员站在台口右前方念白，手推车从同一侧经过。11 月 6 日晚场反馈里被提到的是开头两句关于潮位数字的台词。坐中间偏左的位置受影响较小。"}},
+    {"@type":"Question","name":"《冬港来信》追加的夜场和日场内容一样吗？","acceptedAnswer":{"@type":"Answer","text":"剧本相同，105 分钟无中场。差别在席位：追加夜场开放的是 B 席 42 个座位，视角偏侧，能看到侧幕换道具的全程。想看清正面调度，日场 A 席更合适。"}},
+    {"@type":"Question","name":"《长夜未明》第三集的环境声音轨版，和原版差在哪？","acceptedAnswer":{"@type":"Answer","text":"去掉配乐，只保留脚步声、门轴声与室外环境声，时长仍是 48 分钟。对白位置没有变，但前 20 分钟的信息量更依赖声音方位，戴耳机看比外放更容易分辨空间关系。"}},
+    {"@type":"Question","name":"《断章三则》第三幕换角后，持旧票怎么处理？","acceptedAnswer":{"@type":"Answer","text":"11 月 5 日起的场次由新卡司出演，持旧票可在票面场次前换至同档期其他场，或按原渠道退票。朗读会形式不变，演员仍持本上台。"}},
+    {"@type":"Question","name":"灯塔看守人在初稿里是女性，改动后保留了哪些细节？","acceptedAnswer":{"@type":"Answer","text":"两处称谓错位原样保留，分别在第二幕中段与尾声。10 月 29 日的排练手记记录了改动当天的走位调整，主要是台口站位向左移了约 1 米，避免与机械换景轨道重叠。"}},
+    {"@type":"Question","name":"《桥上风大》第 17 分钟的收音断点，是录制问题吗？","acceptedAnswer":{"@type":"Answer","text":"导演在映后谈里说明是现场风噪，不是后期失误。长镜头在桥面来回三次，第 17 分钟正好是第二次折返，机位迎风，收声设备被风压影响约 4 秒。"}}
+  ]
+}
+</script>
+
+</body>
+  </html>
