@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>无套抽插白虎 github - 成人内容聚合与导航</title>
+  <meta name="description" content="无套抽插白虎 github 聚合成人影片类型索引、演员条目、番号速查与观看指南，适合有经验的观众按图索骥。">
+  <meta name="keywords" content="无套抽插白虎 github">
+  <style>
+    /* ----- 设计系统变量 ----- */
+    :root {
+      --bg: #0e0d12;
+      --panel: #18171e;
+      --panel-soft: #1f1e26;
+      --border: #2b2935;
+      --text-primary: #ece9f1;
+      --text-secondary: #a8a5b3;
+      --text-tertiary: #6b6878;
+      --accent: #d94f6b;
+      --accent-soft: #b83d56;
+      --accent-deep: #9e3048;
+      --accent-glow: rgba(217, 79, 107, 0.18);
+      --radius-card: 14px;
+      --radius-tag: 20px;
+      --radius-btn: 8px;
+      --shadow-default: 0 4px 18px rgba(0, 0, 0, 0.55);
+      --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.7);
+      --font-main: 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
+      --header-height: 64px;
+      --announce-height: 42px;
+      --sticky-total: calc(var(--header-height) + var(--announce-height));
+      --scroll-offset: calc(var(--sticky-total) + 12px);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--scroll-offset);
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ----- 吸顶公告条与页头容器 ----- */
+    .sticky-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+      background: rgba(14, 13, 18, 0.92);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* 公告条 */
+    .announce-bar {
+      background: linear-gradient(90deg, var(--accent-deep), var(--accent-soft));
+      height: var(--announce-height);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      font-size: 0.85rem;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .announce-inner {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .announce-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .announce-brand {
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: #fff;
+      opacity: 0.95;
+      margin-right: 8px;
+    }
+
+    .announce-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    .announce-date {
+      font-weight: 600;
+      color: #ffe1e6;
+    }
+
+    /* 页头 */
+    .page-header {
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo-svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .header-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .header-nav a:hover {
+      color: var(--accent);
+    }
+
+    .header-nav a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    /* 首屏 */
+    .hero {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 48px 24px 32px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.8px;
+      margin-bottom: 18px;
+      color: #fff;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 4px 14px rgba(217, 79, 107, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-soft);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(217, 79, 107, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.15s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      background: radial-gradient(circle at 30% 30%, var(--accent-glow), transparent 70%);
+      border-radius: 28px;
+      padding: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-svg {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+    }
+
+    /* 主内容区容器 */
+    .main-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 16px 24px 56px;
+      display: grid;
+      grid-template-columns: 170px 1fr 260px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* 频道索引（左栏） */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-total) + 16px);
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 16px 0;
+      overflow: hidden;
+    }
+
+    .channel-sidebar h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-tertiary);
+      padding: 0 16px 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+
+    .channel-list {
+      list-style: none;
+    }
+
+    .channel-list li a {
+      display: block;
+      padding: 7px 16px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      border-left: 2px solid transparent;
+    }
+
+    .channel-list li a:hover,
+    .channel-list li a.active {
+      background: rgba(217, 79, 107, 0.08);
+      color: var(--accent);
+      border-left-color: var(--accent);
+    }
+
+    /* 中间主内容 */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      min-width: 0;
+    }
+
+    .section-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 24px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #fff;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .content-card {
+      background: var(--panel-soft);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 400 / 300;
+      object-fit: cover;
+      display: block;
+      background: #222;
+    }
+
+    .card-body {
+      padding: 12px 14px 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      background: rgba(217, 79, 107, 0.15);
+      color: var(--accent);
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .card-excerpt {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      margin-top: auto;
+    }
+
+    /* 紧凑列表 */
+    .compact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .compact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(43, 41, 53, 0.6);
+    }
+
+    .compact-list li:last-child {
+      border-bottom: none;
+    }
+
+    .list-badge {
+      background: var(--accent-deep);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .list-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .list-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .list-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .list-date {
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    /* 分类入口网格 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 10px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .category-item:hover {
+      background: rgba(217, 79, 107, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* 深度解析正文 */
+    .deep-dive h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 20px 0 10px;
+    }
+
+    .deep-dive h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .deep-dive ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .deep-dive li {
+      margin-bottom: 6px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    details {
+      background: var(--panel-soft);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 12px 16px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      color: var(--text-primary);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.15s;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '+';
+      font-size: 1.1rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    details[open] summary {
+      background: rgba(217, 79, 107, 0.08);
+    }
+
+    .faq-answer {
+      padding: 0 16px 14px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+
+    /* 评论 */
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 520px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .comment-item {
+      display: flex;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comment-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--accent-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .comment-body {
+      flex: 1;
+    }
+
+    .comment-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      margin-bottom: 2px;
+    }
+
+    .comment-text {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-date {
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      flex-shrink: 0;
+      width: 72px;
+      padding-top: 2px;
+    }
+
+    .news-content h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .news-content p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 相关推荐标签 */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag-cloud a {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .tag-cloud a:hover {
+      background: rgba(217, 79, 107, 0.12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* 补充板块：榜单 */
+    .rank-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 10px;
+      background: var(--panel-soft);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .rank-num {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--accent);
+      width: 24px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .rank-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .rank-score {
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+    }
+
+    /* 右辅助栏 */
+    .sidebar-right {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: sticky;
+      top: calc(var(--sticky-total) + 16px);
+    }
+
+    .sidebar-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 18px;
+      box-shadow: var(--shadow-default);
+    }
+
+    .sidebar-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sidebar-card h3::before {
+      content: '';
+      width: 3px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* 页尾 */
+    .page-footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px 32px;
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .footer-brand .logo-text {
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .footer-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-col a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 20px 24px 32px;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-default);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .back-to-top.visible {
+      display: flex;
+    }
+
+    .back-to-top:hover {
+      background: var(--accent-soft);
+      transform: translateY(-2px);
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .main-container {
+        grid-template-columns: 1fr 240px;
+      }
+      .channel-sidebar {
+        display: none;
+      }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hero-visual {
+        display: none;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .page-footer {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .main-container {
+        grid-template-columns: 1fr;
+        padding: 16px 16px 40px;
+      }
+      .sidebar-right {
+        position: static;
+      }
+      .header-nav {
+        display: none;
+      }
+      .announce-bar {
+        font-size: 0.7rem;
+        padding: 0 16px;
+      }
+      .hero {
+        padding: 32px 16px 24px;
+      }
+      .hero-content h1 {
+        font-size: 1.6rem;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .page-footer {
+        grid-template-columns: 1fr;
+        padding: 32px 16px;
+      }
+      .footer-bottom {
+        padding: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 + 页头 -->
+  <div class="sticky-wrapper">
+    <div class="announce-bar">
+      <div class="announce-inner">
+        <span class="announce-brand">无套抽插白虎 github</span>
+        <span class="announce-item"><span class="announce-date">11/07</span> 新增「素人无套系列」12部</span>
+        <span class="announce-item"><span class="announce-date">11/06</span> 白石茉莉奈 引退作上线</span>
+        <span class="announce-item"><span class="announce-date">11/05</span> 无套中出排行榜更新</span>
+      </div>
+    </div>
+    <header class="page-header">
+      <div class="logo-area">
+        <svg class="logo-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="#d94f6b" stroke-width="2.5"/>
+          <path d="M10 16 L16 10 L22 16 L16 22 Z" fill="#d94f6b" opacity="0.7"/>
+          <circle cx="16" cy="16" r="3" fill="#fff"/>
+        </svg>
+        <span class="logo-text">无套抽插白虎 github</span>
+      </div>
+      <nav class="header-nav">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选推荐</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#faq">常见问题</a>
+      </nav>
+    </header>
+  </div>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>无套抽插白虎 github</h1>
+      <p class="hero-desc">聚合无套、白虎、中出等类型影片的番号索引、演员条目、片商动态与观看顺序指南。按图索骥，快速定位高评分作品与争议条目。</p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn-primary">浏览精选</a>
+        <a href="/#deep-dive" class="btn-outline">深度解析</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="hero-svg" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="150" cy="150" r="130" stroke="#d94f6b" stroke-width="1.5" opacity="0.3"/>
+        <circle cx="150" cy="150" r="90" stroke="#d94f6b" stroke-width="1" opacity="0.4"/>
+        <circle cx="150" cy="150" r="50" stroke="#d94f6b" stroke-width="0.8" opacity="0.5"/>
+        <path d="M150 60 L180 110 L150 100 L120 110 Z" fill="#d94f6b" opacity="0.25"/>
+        <path d="M150 240 L180 190 L150 200 L120 190 Z" fill="#d94f6b" opacity="0.25"/>
+        <rect x="130" y="130" width="40" height="40" rx="8" stroke="#d94f6b" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <circle cx="150" cy="150" r="6" fill="#d94f6b" opacity="0.8"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 主内容区：三栏 -->
+  <div class="main-container" id="overview">
+    <!-- 左侧频道索引 -->
+    <aside class="channel-sidebar">
+      <h2>频道索引</h2>
+      <ul class="channel-list">
+        <li><a href="/#featured" class="active">无套精选</a></li>
+        <li><a href="/#latest">最新更新</a></li>
+        <li><a href="/#categories">分类检索</a></li>
+        <li><a href="/#deep-dive">深度解析</a></li>
+        <li><a href="/#guide">观看指南</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#comments">用户评论</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+        <li><a href="/#recommend">相关推荐</a></li>
+        <li><a href="/#rank">热度榜单</a></li>
+        <li><a href="/#contrib">投稿交流</a></li>
+      </ul>
+    </aside>
+
+    <!-- 中间主内容 -->
+    <main class="main-content">
+
+      <!-- 1. 主题领域概览 -->
+      <section class="section-card" id="domain-overview">
+        <h2 class="section-title">无套题材的类别与观看门槛</h2>
+        <p style="font-size:0.92rem;color:var(--text-secondary);line-height:1.8;margin-bottom:12px;">
+          无套抽插题材在2026年已经分化为几个明确支线：素人企划、专属女优无套解禁、以及以“白虎”为视觉卖点的特定系列。素人企划以片商、日期、番号三位一体的方式传播，代表如「S-Cute」「Tokyo Hot」的n系列；专属解禁则依赖女优的合约条款，例如「三上悠亚」在2026年8月发布的最终无套作，片商S1在预告中直接标注“引退前最后一部本番”。白虎类内容更多作为标签存在，需要结合女优本身的作品列表筛选，单靠标签搜索容易命中标题党。
+        </p>
+        <p style="font-size:0.92rem;color:var(--text-secondary);line-height:1.8;">
+          当前值得关注的具体条目包括：白石茉莉奈11月引退作（片商Madonna，番号JUL-886）、河北彩花10月无套新作（S1，番号SSIS-762）、以及素人厂牌「无套研究所」在10月第三周集中放出的6部作品。这些条目在评分网站上的初始分集中在7.2—8.1之间，其中河北彩花那部的评论区在发布48小时内就出现了“剪辑跳跃”和“前戏过长”两类具体批评，可作为选片参考。
+        </p>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="section-card" id="featured">
+        <h2 class="section-title">高评分无套作品精选</h2>
+        <div class="card-grid">
+          <div class="content-card">
+            <img src="https://picsum.photos/seed/wutao1/400/300" alt="白石茉莉奈引退无套作封面" class="card-img" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">白石茉莉奈 引退无套本番</h3>
+              <div class="card-tags"><span class="tag">专属解禁</span><span class="tag">Madonna</span><span class="tag">JUL-886</span></div>
+              <p class="card-excerpt">2026年11月1日发售，片长150分钟，包含两段无套场景。白石在采访中确认“完全无修剪”，但实际成片有3处明显跳帧。</p>
+              <div class="card-meta"><span>评分 8.1</span><span>11/01 更新</span></div>
+            </div>
+          </div>
+          <div class="content-card">
+            <img src="https://picsum.photos/seed/wutao2/400/300" alt="河北彩花无套新作封面" class="card-img" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">河北彩花 无套中出</h3>
+              <div class="card-tags"><span class="tag">S1</span><span class="tag">中出</span><span class="tag">SSIS-762</span></div>
+              <p class="card-excerpt">10月28日上架，导演为「岚山」，前半段为固定机位长镜头，后半段切换手持。评论区集中讨论第二段结尾的10秒黑屏。</p>
+              <div class="card-meta"><span>评分 7.8</span><span>10/28 更新</span></div>
+            </div>
+          </div>
+          <div class="content-card">
+            <img src="https://picsum.photos/seed/wutao3/400/300" alt="无套研究所素人作品封面" class="card-img" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">无套研究所 素人6部连发</h3>
+              <div class="card-tags"><span class="tag">素人</span><span class="tag">Tokyo Hot</span><span class="tag">n系列</span></div>
+              <p class="card-excerpt">10月20日—10月26日集中放出，编号n1452至n1457。其中n1454因女优表情自然被推至本周素人榜第2位。</p>
+              <div class="card-meta"><span>评分 7.5</span><span>10/26 更新</span></div>
+            </div>
+          </div>
+          <div class="content-card">
+            <img src="https://picsum.photos/seed/wutao4/400/300" alt="白虎标签特辑封面" class="card-img" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <h3 class="card-title">白虎标签精选 5部</h3>
+              <div class="card-tags"><span class="tag">白虎</span><span class="tag">标签合集</span><span class="tag">2026</span></div>
+              <p class="card-excerpt">人工筛选2026年9—10月间明确标注“白虎”且正片不遮挡的5部作品，其中3部为素人企划，2部为专属女优。</p>
+              <div class="card-meta"><span>评分 7.6</span><span>10/30 更新</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 / 动态 -->
+      <section class="section-card" id="latest">
+        <h2 class="section-title">近7日更新与动态</h2>
+        <ul class="compact-list">
+          <li>
+            <span class="list-badge">11/07</span>
+            <div class="list-content">
+              <div class="list-title">「无套抽插」素人系列新增12部</div>
+              <div class="list-desc">片商「素人研究所」在11月7日凌晨上传12部新作，编号从SIRO-4821到SIRO-4832，其中7部为白虎标签。</div>
+            </div>
+            <span class="list-date">今天</span>
+          </li>
+          <li>
+            <span class="list-badge">11/06</span>
+            <div class="list-content">
+              <div class="list-title">白石茉莉奈引退作DVD版发售</div>
+              <div class="list-desc">Madonna在11月6日追加DVD实体版，比数字版多出18分钟幕后花絮，花絮中白石本人确认“最后一场是真实无套”。</div>
+            </div>
+            <span class="list-date">昨天</span>
+          </li>
+          <li>
+            <span class="list-badge">11/05</span>
+            <div class="list-content">
+              <div class="list-title">无套中出排行榜更新：河北彩花升至第3</div>
+              <div class="list-desc">FANZA周榜11月5日数据，河北彩花SSIS-762从第6位升至第3位，前两位分别是白石茉莉奈引退作和素人n1454。</div>
+            </div>
+            <span class="list-date">11/05</span>
+          </li>
+          <li>
+            <span class="list-badge">11/04</span>
+            <div class="list-content">
+              <div class="list-title">S1公布11月无套档期：三上悠亚复归作</div>
+              <div class="list-desc">S1在11月4日预告三上悠亚将于11月20日发布无套新作，番号SSIS-790，导演为「宇佐美」，题材为“出差先辈”。</div>
+            </div>
+            <span class="list-date">11/04</span>
+          </li>
+          <li>
+            <span class="list-badge">11/03</span>
+            <div class="list-content">
+              <div class="list-title">「白虎」标签搜索量周环比上升22%</div>
+              <div class="list-desc">据FANZA标签统计，11月第一周「白虎」搜索量较前周上升22%，主要来自20—30岁男性用户，关联词为“无套”“素人”。</div>
+            </div>
+            <span class="list-date">11/03</span>
+          </li>
+          <li>
+            <span class="list-badge">11/02</span>
+            <div class="list-content">
+              <div class="list-title">素人厂牌「无套研究所」更换摄影监督</div>
+              <div class="list-desc">原摄影监督「佐藤」于11月2日离职，新监督「中村」在推特表示将减少固定机位，增加手持跟拍比例。</div>
+            </div>
+            <span class="list-date">11/02</span>
+          </li>
+          <li>
+            <span class="list-badge">11/01</span>
+            <div class="list-content">
+              <div class="list-title">白石茉莉奈引退作首日销量破1.2万</div>
+              <div class="list-desc">Madonna官方数据，11月1日数字版首日销量1.2万份，打破该厂牌2026年单日纪录，其中无套场景被截取传播至推特。</div>
+            </div>
+            <span class="list-date">11/01</span>
+          </li>
+          <li>
+            <span class="list-badge">10/30</span>
+            <div class="list-content">
+              <div class="list-title">「白虎」标签新增筛选维度：自然白虎 / 剃毛</div>
+              <div class="list-desc">FANZA在10月30日更新标签系统，将「白虎」拆分为“自然”和“剃毛”两个子标签，目前自然标签下条目仅占23%。</div>
+            </div>
+            <span class="list-date">10/30</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="section-card" id="categories">
+        <h2 class="section-title">按类型与厂牌检索</h2>
+        <div class="category-grid">
+          <a href="/#featured" class="category-item">素人无套</a>
+          <a href="/#featured" class="category-item">专属解禁</a>
+          <a href="/#featured" class="category-item">白虎自然</a>
+          <a href="/#featured" class="category-item">中出本番</a>
+          <a href="/#featured" class="category-item">S1厂牌</a>
+          <a href="/#featured" class="category-item">Madonna厂牌</a>
+          <a href="/#featured" class="category-item">Tokyo Hot</a>
+          <a href="/#featured" class="category-item">素人研究所</a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析正文 -->
+      <section class="section-card deep-dive" id="deep-dive">
+        <h2 class="section-title">无套作品的判断维度与常见陷阱</h2>
+        <h3>“无套”标签的三种实际含义</h3>
+        <p>在2026年的日本成人影片分类中，“无套”至少对应三种不同情况。第一种是字面意义的本番无套，片商会在封面明确标注“本番”或“生挿入”，例如S1在10月28日发布的SSIS-762，预告片第47秒有直接画面。第二种是仅限口交场景无套，正片其余部分仍使用保护措施，这类作品在素人企划中占比最高，比如「无套研究所」n1452，全片只有第18分钟一段为无套口交。第三种是宣传用语，实际正片经过剪辑或遮挡，典型如9月「Moodyz」的MIAA-672，标题写“完全无套”，但评论区有用户逐帧截图指出第33分钟出现明显马赛克补丁。</p>
+        <h3>白虎标签的筛选成本</h3>
+        <p>“白虎”在FANZA标签系统中于10月30日拆分为“自然”与“剃毛”两个子标签，目前自然标签下仅有23%的条目，约340部。这意味着直接搜索“白虎”仍会混入大量剃毛作品，需要点击进入详情页查看女优的过往作品才能分辨。一个可操作的方法是：在FANZA搜索“白虎 自然”后，按“发行日期”倒序排列，2026年10月之后的新作基本都正确使用子标签，而2025年之前的旧作仍需人工二次筛选。</p>
+        <h3>评分与评论的参考权重</h3>
+        <p>以河北彩花SSIS-762为例，FANZA评分7.8，但评论区前20条中有11条提到“剪辑跳跃”，其中用户「kazu_777」在10月29日写道：“第52分钟到第54分钟之间明显剪掉了一段，女优姿势突然变了。”另一个用户「sora_love」则给出正面评价：“长镜头那段值回票价。”两个评论指向不同场景，说明评分本身无法区分“剪辑问题”和“内容质量”。更有效的判断方式是：先看差评是否集中在同一技术环节（如剪辑、灯光、收音），如果三条以上差评都指向同一个时间点，那么该问题大概率真实存在。白石茉莉奈引退作JUL-886的差评则集中在“前戏过长”，前20条差评中有7条提到“前40分钟都在聊天”，这个比例足以让偏好直接进入正题的观众提前快进。</p>
+        <h3>素人企划的不可控因素</h3>
+        <p>素人厂牌如「无套研究所」「Tokyo Hot」的出品质量波动远大于专属厂牌。以10月20日至26日集中放出的6部作品为例，n1454在素人榜排第2，但同批的n1456在评论区被三名用户指出“女优中途接电话”。素人企划的拍摄周期通常只有一天，现场突发状况无法通过重拍弥补。选片时，优先选择时长在90分钟以上、且评论区有超过5条具体场景描述的条目，这类条目至少说明有人完整看过并愿意花时间写细节。</p>
+      </section>
+
+      <!-- 6. 体验指南 / 消费路径 -->
+      <section class="section-card" id="guide">
+        <h2 class="section-title">从标签到播放的观看顺序</h2>
+        <p style="font-size:0.92rem;color:var(--text-secondary);line-height:1.8;margin-bottom:12px;">
+          面对同一题材下几十部新作，按以下顺序筛选可以少踩坑。第一步，先看片商：S1、Madonna、Moodyz的专属女优作品有固定质检流程，剪辑粗糙的概率低于素人厂牌。第二步，在片商内部按“无套”标签过滤，再按发行日期排序，只看最近30天的。第三步，点开详情页，直接拉到评论区，按“最新”排序，看前5条有没有具体描述场景的句子。如果前5条全是“好片”“喜欢”这类无信息短句，跳过。第四步，确认女优是否在近期有引退或解禁新闻，引退作通常投入更多制作资源，但也要接受“情怀溢价”。
+        </p>
+        <p style="font-size:0.92rem;color:var(--text-secondary);line-height:1.8;">
+          以11月1日—11月7日这一周为例，值得优先看的是白石茉莉奈JUL-886（制作资源最高，但前40分钟节奏慢）和素人n1454（自然白虎，90分钟无冷场）。可以观望的是三上悠亚SSIS-790，11月20日才发售，目前只有预告片，预告中无套镜头仅2秒，正片比例未知。不建议直接购买的是任何标题含“无套”但封面未标注“本番”的作品，这类条目中有相当比例是口交限定。
+        </p>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="section-card" id="faq">
+        <h2 class="section-title">常见问题</h2>
+        <div class="faq-list">
+          <details>
+            <summary>无套作品和普通作品在番号上怎么区分？</summary>
+            <div class="faq-answer">番号本身不包含“无套”信息，需要看片商在标题或封面上的标注。S1的无套作通常在标题末尾加“生挿入”或“本番”，Madonna则用“完全無套”字样。素人厂牌如Tokyo Hot的n系列，无套与否需要看每一部的详情页描述，没有统一规律。</div>
+          </details>
+          <details>
+            <summary>白虎标签下为什么有很多剃毛作品？</summary>
+            <div class="faq-answer">FANZA在2026年10月30日才把“白虎”拆分为“自然”和“剃毛”两个子标签，在此之前上传的作品全部混在同一个标签下。目前自然标签下只有约340部，占全部白虎标签的23%。筛选时手动加上“自然”子标签，或者按发行日期倒序，只看10月30日之后的新作。</div>
+          </details>
+          <details>
+            <summary>素人无套作品为什么经常出现中途接电话的情况？</summary>
+            <div class="faq-answer">素人企划的拍摄周期通常只有一天，女优是临时招募的素人，现场没有专属女优那样的经纪人和制作团队控场。手机未静音、拍摄中断、重新开拍都会保留在成片里，因为素人厂牌的剪辑预算极低。n1456就是一个例子，10月23日上传后，前三名评论都提到了接电话的片段。</div>
+          </details>
+          <details>
+            <summary>引退无套作值得买吗？</summary>
+            <div class="faq-answer">看制作方。白石茉莉奈JUL-886由Madonna制作，片长150分钟，包含幕后花絮18分钟，首日销量1.2万份，制作资源确实高于常规作。但前40分钟为对话和采访，无套场景集中在后半段。如果偏好直接进入正题，可以等11月10日之后的剪辑版。</div>
+          </details>
+          <details>
+            <summary>无套中出排行榜的排名依据是什么？</summary>
+            <div class="faq-answer">FANZA周榜按销量、收藏量、评论数三项加权计算，其中销量权重最高。11月5日的数据中，白石茉莉奈引退作排第1，素人n1454排第2，河北彩花SSIS-762排第3。周榜每周二更新，反映的是前7天的数据，不代表作品长期质量。</div>
+          </details>
+          <details>
+            <summary>怎么判断一部无套作品是不是标题党？</summary>
+            <div class="faq-answer">三个检查点：封面是否标注“本番”或“生挿入”；详情页截图是否包含无套场景；评论区前5条有没有人提到具体时间点的画面。如果封面只写“无套”但详情页截图全是保护措施，大概率是口交限定。9月的MIAA-672就是例子，标题写“完全无套”，但第33分钟出现马赛克补丁，被用户逐帧截图指出。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="section-card" id="comments">
+        <h2 class="section-title">用户评论</h2>
+        <div class="comment-list">
+          <div class="comment-item"><div class="comment-avatar">K</div><div class="comment-body"><div class="comment-name">kazu_777</div><div class="comment-text">SSIS-762第52分钟那个剪辑太明显了，女优姿势突然从正面变成侧面，中间至少剪掉5秒。彩花本身没问题，剪辑背锅。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">S</div><div class="comment-body"><div class="comment-name">sora_love</div><div class="comment-text">白石引退作前40分钟我快进了三次。后面确实猛，但那个节奏不是每个人受得了。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">N</div><div class="comment-body"><div class="comment-name">nana_2026</div><div class="comment-text">n1454那个女优表情很自然，不像演的。同批的n1456接电话那段我笑出声，导演居然没剪掉。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">T</div><div class="comment-body"><div class="comment-name">takeshi_09</div><div class="comment-text">白虎自然标签下只有三百多部？难怪我每次搜出来一堆剃毛的，还以为标签坏了。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">M</div><div class="comment-body"><div class="comment-name">momo_pink</div><div class="comment-text">三上11月20号那部预告看了，无套镜头就两秒，剩下全是剧情。等正片评价再决定。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">R</div><div class="comment-body"><div class="comment-name">ryo_1120</div><div class="comment-text">素人厂牌的收音太差了，n1453全程有风声，根本听不清说话。画面再好也出戏。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">A</div><div class="comment-body"><div class="comment-name">akira_ss</div><div class="comment-text">中出排行榜前三我都看了，白石那部值第一，素人n1454第二也合理，河北彩花第三有点靠粉丝刷榜。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">Y</div><div class="comment-body"><div class="comment-name">yuki_hime</div><div class="comment-text">MIAA-672那个马赛克补丁我也发现了，当时还以为是播放器问题，换了个播放器一样。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">J</div><div class="comment-body"><div class="comment-name">jun_1024</div><div class="comment-text">有没有人觉得最近素人企划的女优质量在下滑？10月这6部里只有n1454能看，其他几部镜头都晃得头晕。</div></div></div></div>
+          <div class="comment-item"><div class="comment-avatar">D</div><div class="comment-body"><div class="comment-name">daiki_88</div><div class="comment-text">每次搜白虎出来的都是同一批旧作，新作标签打得乱七八糟，还是得手动筛。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">C</div><div class="comment-body"><div class="comment-name">chihiro_</div><div class="comment-text">不太懂为什么引退作都要搞两小时以上，一个半小时足够了，后半段明显拖。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">H</div><div class="comment-body"><div class="comment-name">hiro_777</div><div class="comment-text">素人n1454的场景设计比很多专属女优的强，固定机位加自然光，没有多余的道具。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">P</div><div class="comment-body"><div class="comment-name">ponta_2026</div><div class="comment-text">这个月新作太多了根本看不过来，先收藏了慢慢筛。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">L</div><div class="comment-body"><div class="comment-name">luna_moon</div><div class="comment-text">评论区比正片好看，尤其是逐帧截图的大佬，帮我省了不少钱。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">G</div><div class="comment-body"><div class="comment-name">gaku_55</div><div class="comment-text">白石那个幕后花絮比正片有意思，她本人吐槽导演要求太多，笑了。</div></div></div>
+          <div class="comment-item"><div class="comment-avatar">E</div><div class="comment-body"><div class="comment-name">emi_1123</div><div class="comment-text">剃毛和自然在画面上区别真不大，标签分那么细感觉是噱头。</div></div></div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="section-card" id="news">
+        <h2 class="section-title">相关资讯</h2>
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-date">11/07</div>
+            <div class="news-content">
+              <h4>素人研究所11月7日批量上传12部无套新作</h4>
+              <p>编号SIRO-4821至SIRO-4832，其中7部标注白虎自然，片长均在85—110分钟之间。上传后6小时内，SIRO-4825进入素人榜前10。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="news-date">11/06</div>
+            <div class="news-content">
+              <h4>Madonna追加白石茉莉奈DVD实体版，多18分钟花絮</h4>
+              <p>11月6日上架，花絮中白石本人确认最后一场无套为真实拍摄，没有使用替身。DVD版在亚马逊日本成人分区预约量排名第3。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="news-date">11/05</div>
+            <div class="news-content">
+              <h4>FANZA周榜11月5日数据：河北彩花升至第3</h4>
+              <p>SSIS-762从第6位升至第3位，前两位分别为JUL-886和n1454。FANZA未公布具体销量数字，仅给出排名变化。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="news-date">11/04</div>
+            <div class="news-content">
+              <h4>S1预告三上悠亚11月20日无套新作SSIS-790</h4>
+              <p>预告片长1分22秒，无套镜头出现在第58秒至第60秒，题材标注为“出差先辈”。S1官方推特称“完全本番”，但正片比例未知。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="news-date">11/03</div>
+            <div class="news-content">
+              <h4>「白虎」标签搜索量周环比上升22%</h4>
+              <p>FANZA标签统计，11月第一周关联搜索词前三位分别为“无套”“素人”“自然”。20—30岁男性用户占比67%。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <div class="news-date">10/30</div>
+            <div class="news-content">
+              <h4>FANZA拆分白虎标签：自然与剃毛分列</h4>
+              <p>10月30日更新后，自然标签下收录约340部，剃毛标签约1120部。旧作仍混在总标签下，需手动筛选。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="section-card" id="recommend">
+        <h2 class="section-title">相关推荐</h2>
+        <div class="tag-cloud">
+          <a href="/#featured">白石茉莉奈引退作解析</a>
+          <a href="/#featured">河北彩花SSIS-762剪辑问题</a>
+          <a href="/#featured">素人n1454自然白虎</a>
+          <a href="/#featured">三上悠亚SSIS-790预告</a>
+          <a href="/#featured">MIAA-672马赛克争议</a>
+          <a href="/#featured">无套研究所n系列清单</a>
+          <a href="/#featured">FANZA白虎子标签用法</a>
+          <a href="/#featured">中出周榜11月第1周</a>
+        </div>
+      </section>
+
+      <!-- 11. 补充板块：榜单 + 投稿 -->
+      <section class="section-card" id="rank">
+        <h2 class="section-title">无套中出周榜（11月第1周）</h2>
+        <ul class="rank-list">
+          <li class="rank-item"><span class="rank-num">1</span><span class="rank-title">白石茉莉奈 JUL-886 引退无套本番</span><span class="rank-score">8.1分</span></li>
+          <li class="rank-item"><span class="rank-num">2</span><span class="rank-title">素人研究所 n1454 自然白虎</span><span class="rank-score">7.9分</span></li>
+          <li class="rank-item"><span class="rank-num">3</span><span class="rank-title">河北彩花 SSIS-762 无套中出</span><span class="rank-score">7.8分</span></li>
+          <li class="rank-item"><span class="rank-num">4</span><span class="rank-title">n1452 素人无套口交限定</span><span class="rank-score">7.4分</span></li>
+          <li class="rank-item"><span class="rank-num">5</span><span class="rank-title">n1457 白虎剃毛争议作</span><span class="rank-score">7.2分</span></li>
+        </ul>
+      </section>
+
+      <section class="section-card" id="contrib">
+        <h2 class="section-title">投稿与交流</h2>
+        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.7;margin-bottom:12px;">
+          如果你看过近期无套作品，发现评论区没人提到的细节——比如剪辑跳帧的具体时间点、素人企划中的收音问题、或者白虎标签下的误标条目——可以整理成条目线索投稿。格式建议：番号 + 时间点 + 问题描述，字数不限。每周五汇总一次，更新到最新动态里。
+        </p>
+        <p style="font-size:0.85rem;color:var(--text-tertiary);">
+          投稿邮箱：tougao@example.com（示例地址，不跳转）。也可以在评论区直接留言，附上番号和时间点，看到后会整理进下一期资讯。
+        </p>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="sidebar-right">
+      <div class="sidebar-card">
+        <h3>本周热榜</h3>
+        <ul class="compact-list">
+          <li><span class="list-badge">1</span><div class="list-content"><div class="list-title">白石茉莉奈 JUL-886</div><div class="list-desc">引退无套本番</div></div></li>
+          <li><span class="list-badge">2</span><div class="list-content"><div class="list-title">素人 n1454</div><div class="list-desc">自然白虎</div></div></li>
+          <li><span class="list-badge">3</span><div class="list-content"><div class="list-title">河北彩花 SSIS-762</div><div class="list-desc">无套中出</div></div></li>
+          <li><span class="list-badge">4</span><div class="list-content"><div class="list-title">n1452</div><div class="list-desc">口交限定</div></div></li>
+          <li><span class="list-badge">5</span><div class="list-content"><div class="list-title">n1457</div><div class="list-desc">白虎剃毛</div></div></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h3>标签速查</h3>
+        <div class="tag-cloud" style="gap:6px;">
+          <a href="/#featured" style="font-size:0.75rem;padding:4px 10px;">无套</a>
+          <a href="/#featured" style="font-size:0.75rem;padding:4px 10px;">白虎自然</a>
+          <a href="/#featured" style="font-size:0.75rem;padding:4px 10px;">中出</a>
+          <a href="/#featured" style="font-size:0.75rem;padding:4px 10px;">素人</a>
+          <a href="/#featured" style="font-size:0.75rem;padding:4px 10px;">S1</a>
+          <a href="/#featured" style="font-size:0.75rem;padding:4px 10px;">Madonna</a>
+          <a href="/#featured" style="font-size:0.75rem;padding:4px 10px;">Tokyo Hot</a>
+        </div>
+      </div>
+      <div class="sidebar-card">
+        <h3>更新节奏</h3>
+        <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.6;">素人厂牌集中在每周四、周五批量上传。专属厂牌新作预告通常在每月1日和15日发布。周榜每周二更新。</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="page-footer">
+    <div class="footer-brand">
+      <span class="logo-text">无套抽插白虎 github</span>
+      <p class="footer-desc">覆盖2026年9月至11月的无套、白虎、中出类条目，按番号、厂牌、女优、标签四个维度归档。每周更新素人企划清单，每月初整理专属解禁与引退作信息。</p>
+    </div>
+    <div class="footer-col">
+      <h4>内容</h4>
+      <ul>
+        <li><a href="/#featured">精选作品</a></li>
+        <li><a href="/#latest">最新更新</a></li>
+        <li><a href="/#rank">热度榜单</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>指南</h4>
+      <ul>
+        <li><a href="/#deep-dive">深度解析</a></li>
+        <li><a href="/#guide">观看顺序</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#contrib">投稿交流</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>互动</h4>
+      <ul>
+        <li><a href="/#comments">用户评论</a></li>
+        <li><a href="/#contrib">条目投稿</a></li>
+        <li><a href="/#recommend">相关推荐</a></li>
+        <li><a href="/#categories">分类检索</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="footer-bottom">
+    <span>© 2026 无套抽插白虎 github 内容聚合示例。条目与评论为演示数据，不构成购买建议。</span>
+    <span>最近更新：2026年11月8日 · 对应条目：素人研究所12部新作、白石茉莉奈DVD版。</span>
+  </div>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      const backBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          backBtn.classList.add('visible');
+        } else {
+          backBtn.classList.remove('visible');
+        }
+      });
+      backBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 平滑滚动偏移兼容
+      document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href').substring(2);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            const offset = document.querySelector('.sticky-wrapper').offsetHeight + 12;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // 键盘 Esc 关闭移动端菜单（本页无抽屉，留空但保留语义）
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          // 如有展开的 details 可关闭，这里不额外操作
+        }
+      });
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "无套抽插白虎 github",
+    "description": "无套抽插白虎 github 聚合成人影片类型索引、演员条目、番号速查与观看指南，适合有经验的观众按图索骥。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "无套作品和普通作品在番号上怎么区分？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "番号本身不包含“无套”信息，需要看片商在标题或封面上的标注。S1的无套作通常在标题末尾加“生挿入”或“本番”，Madonna则用“完全無套”字样。素人厂牌如Tokyo Hot的n系列，无套与否需要看每一部的详情页描述，没有统一规律。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "白虎标签下为什么有很多剃毛作品？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FANZA在2026年10月30日才把“白虎”拆分为“自然”和“剃毛”两个子标签，在此之前上传的作品全部混在同一个标签下。目前自然标签下只有约340部，占全部白虎标签的23%。筛选时手动加上“自然”子标签，或者按发行日期倒序，只看10月30日之后的新作。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "素人无套作品为什么经常出现中途接电话的情况？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "素人企划的拍摄周期通常只有一天，女优是临时招募的素人，现场没有专属女优那样的经纪人和制作团队控场。手机未静音、拍摄中断、重新开拍都会保留在成片里，因为素人厂牌的剪辑预算极低。n1456就是一个例子，10月23日上传后，前三名评论都提到了接电话的片段。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "引退无套作值得买吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "看制作方。白石茉莉奈JUL-886由Madonna制作，片长150分钟，包含幕后花絮18分钟，首日销量1.2万份，制作资源确实高于常规作。但前40分钟为对话和采访，无套场景集中在后半段。如果偏好直接进入正题，可以等11月10日之后的剪辑版。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "无套中出排行榜的排名依据是什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FANZA周榜按销量、收藏量、评论数三项加权计算，其中销量权重最高。11月5日的数据中，白石茉莉奈引退作排第1，素人n1454排第2，河北彩花SSIS-762排第3。周榜每周二更新，反映的是前7天的数据，不代表作品长期质量。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "怎么判断一部无套作品是不是标题党？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "三个检查点：封面是否标注“本番”或“生挿入”；详情页截图是否包含无套场景；评论区前5条有没有人提到具体时间点的画面。如果封面只写“无套”但详情页截图全是保护措施，大概率是口交限定。9月的MIAA-672就是例子，标题写“完全无套”，但第33分钟出现马赛克补丁，被用户逐帧截图指出。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+                                                                                                                     </html>
